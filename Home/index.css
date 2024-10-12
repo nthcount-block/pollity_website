@@ -8,6 +8,10 @@ body, html {
   h1 {
     font-family: 'Baskervville', serif
   }
+  a {
+    text-decoration: none;
+    color: #262626;
+  }
   
   .navbar {
     display: flex;
@@ -309,19 +313,7 @@ body, html {
   margin-top: 20px;
 }
 
-.icon {
-    /* background-color: #f5f6f7; */
-    /* border: 2px solid #d4e4e2; */
-    /* border-radius: 50%; */
-    /* padding: 15px; */
-    /* width: 40px; */
-    /* height: 40px; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* font-size: 1.5rem; */
-    /* color: #075e55; */
-}
+
 .icon1 { grid-area: icon1; }
 .icon2 { grid-area: icon2; }
 .icon3 { grid-area: icon3; }
@@ -601,7 +593,9 @@ body, html {
 }
 
 .faq-right {
-  max-width: 60%;
+  /* max-width: 50%;
+  min-width: 50%; */
+  width: 50%;
 }
 
 .faq-item {
@@ -634,6 +628,43 @@ body, html {
   font-weight: bold;
   text-decoration: none;
   font-size: 1.1rem;
+}
+
+/* footer */
+.footer {
+  background-color: #F5F5F5;
+  height: 30vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 10rem;
+  align-items: center;
+}
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.logo2 {
+  font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    gap: 8px;
+    
+}
+.footer-icon {
+  display: flex;
+  gap: 20px;
+}
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+.footer-link a {
+  text-decoration: none;
+  color: #595959;
+  font-weight: 700;
 }
 
   /* Fade-in animation */

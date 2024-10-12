@@ -1,0 +1,353 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Satoshi', sans-serif;;
+  }
+
+  h1 {
+    font-family: 'Baskervville', serif
+  }
+  a {
+    text-decoration: none;
+    color: #262626;
+  }
+  .h1 {
+    font-size: 4rem;
+    font-weight: lighter;
+    margin: 40px auto 20px;
+    text-align: center;
+    color: #004B52;
+    max-width: 50vw;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 90px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    gap: 4px;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .nav-links li {
+    margin: 0 20px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    background-color: #46B97D;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1rem;
+   
+  }
+  .btn {
+    margin-top: 100px;
+    display: inline-block;
+  }
+  
+  .cta-button:hover {
+    background-color: #228B22;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px;
+    transition: 0.4s;
+  }
+  /* hero section */
+  .admin-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    /* max-width: 1200px; */
+    margin: 50px auto;
+    padding:  50px;
+    border-radius: 24px;
+    position: relative;
+  }
+ 
+  
+  .admin-hero p {
+    text-align: center;
+    color: #004B52;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 50px;
+  }
+  .admin-hero button {
+    padding: 12px 20px;
+    border-radius: 24px;
+    margin-bottom: 100px;
+    border: none;
+    background-color: #46B97D;
+    color: white;
+  }
+  .admin-hero img {
+    width: 80%;
+    border-radius: 24px;
+    border: 4px solid #f5f5f5;
+  }
+
+  /* slider */
+
+  .adminslider {
+    padding: 100px 0;
+}
+.adminslider > h1 {
+    /* font-size: 3rem; */
+    color: #004B52;
+    /* text-align: center; */
+    font-weight: normal;
+    width: 50%;
+}
+.adminsliderflex {
+    background-color: #F5F5F5;
+    display: flex;
+    width: 80%;
+    margin: auto;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+}
+.adminsliderflex > img {
+    width: 50%;
+    height: 500px;
+    object-fit: contain;
+    padding: 20px 0px;
+    /* border: 2px solid black; */
+}
+.adminsliderflex  h1 {
+ color: #46B97D;
+ font-size: 3rem;
+ font-weight: normal;
+
+}
+.adminslidercontent {
+    width: 50%;
+    color: #595959;
+    /* border: 2px solid black; */
+}
+.adminslidercontent p {
+    width: 80%;
+    /* border: 2px solid black; */
+}
+
+/* admins why */
+.adminswhy h1 {
+    margin-bottom: 50px;
+}
+
+.whyflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80vw;
+    margin: auto;
+}
+.whycontainer {
+    background-color: #f5f5f5;
+    border-radius: 24px;
+    color: #004B52;
+    padding: 20px;
+    flex: 1;
+    height: 350px;
+
+}
+.whycontainer img {
+    margin-bottom: 100px;
+}
+/* ready */
+.ready {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    margin-top: 150px;
+}
+
+.votercontainer1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    /* max-width: 1200px; */
+    background-color: #91FDC5;
+    margin: 50px auto;
+    padding:  50px;
+    border-radius: 24px;
+    position: relative;
+  }
+  .votercontainer1 h1 {
+    font-size: 3.5rem;
+    color: #004B52;
+
+  }
+  .votergroup2img {
+   position: absolute;
+   width: 100%;
+   bottom: 0;
+   left: 0;
+   object-fit: contain;
+  }
+  
+  .votercontainer1 p {
+    text-align: center;
+    color: #004B52;
+    /* padding-bottom: 100px; */
+  }
+  .votercontainer1 button {
+    padding: 10px 15px;
+    border-radius: 24px;
+    margin-bottom: 100px;
+    border: none;
+  }
+  /* Faq styles */
+.faq-container {
+    display: flex;
+    padding: 50px;
+    justify-content: space-around;
+  }
+  
+  .faq-left {
+    max-width: 30%;
+  }
+  
+  .faq-left h2 {
+    color: #69a691;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .faq-left h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .faq-left p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #063d33;
+  }
+  
+  .faq-left a {
+    color: #063d33;
+    text-decoration: none;
+  }
+  
+  .faq-right {
+    /* max-width: 50%;
+    min-width: 50%; */
+    width: 50%;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 15px 0;
+  }
+  
+  .faq-question .icon {
+    font-size: 1.5rem;
+  }
+  
+  .faq-answer {
+    display: none;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .see-more a {
+    color: #28A745;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  /* footer */
+  .footer {
+    background-color: #F5F5F5;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 10rem;
+    align-items: center;
+  }
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .logo2 {
+    font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      gap: 8px;
+      
+  }
+  .footer-icon {
+    display: flex;
+    gap: 20px;
+  }
+  .footer-link {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+  }
+  .footer-link a {
+    text-decoration: none;
+    color: #595959;
+    font-weight: 700;
+  }

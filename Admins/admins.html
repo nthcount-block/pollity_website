@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admins</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admins.css" />
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        
+            <a href="../Home/index.html" class="logo">
+
+                <img src="../images/Logo.svg" alt="Logo" srcset="" /><span
+                >Blockvote</span
+                >
+            </a>
+        <div class="hamburger" id="hamburger">
+          <img src="../images/menu.svg" alt="" srcset="">
+        </div>
+        <ul class="nav-links menu" id="menu">
+          <li><a href="../Voters/voters.html">Voters</a></li>
+          <li><a href="../Admins/admins.html">Admins</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a href="#" class="cta-button" id="btn">Schedule a consultation</a>
+      </nav>
+      <!-- hero section -->
+       <section>
+        <div class="admin-hero">
+                <h1 class="h1">Secure and Efficient Election Management with BlockVote</h1>
+            
+            <div class="">
+                <p>BlockVote provides government bodies and organizations with the technology needed to manage elections securely and efficiently.
+            </div>
+            <button>Schedule a consultation</button>
+            <img src="../images/Group.png" alt="" srcset="">
+        </div>
+       </section>
+       <section class="adminslider">
+        <h1 class="h1">Why BlockVote is the Right Choice for Your Voters</h1>
+        <div class="adminslidercontainer">
+        <div class="adminsliderflex">
+            <img src="../images/couple.png" alt="" srcset="">
+
+                <div class="adminslidercontent">
+                    <h1>For Polling Unit Officers</h1>
+                    <div>
+                        <h3>Geo-Location Locking</h3>
+                        <p>Keep voting devices secure within the polling unit by locking them to the designated location. If moved outside, the system automatically locks, preventing unauthorized access.</p>
+                    </div>
+                    <div>
+                        <h3>Real-Time Monitoring</h3>
+                        <p>Track voter turnout, system status, and accreditation progress live, enabling quick responses to any issues that arise.</p>
+                    </div>
+                    <div>
+                        <h3>Biometric Authentication</h3>
+                        <p>Ensure that only authorized officers can access the system with facial and fingerprint recognition, securing every step of the election process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="adminswhy">
+        <h1 class="h1">Why Trust BlockVote</h1>
+        <div class="whyflex">
+            <div class="whycontainer">
+                <img src="../images/security.svg" alt="" srcset="">
+                <h3>Security and Compliance</h3>
+                <p>Ensure all votes are securely recorded and comply with legal standards, reducing the risk of fraud and enhancing electoral integrity.</p>
+            </div>
+            <div class="whycontainer">
+                <img src="../images/list.svg" alt="" srcset="">
+                <h3>Ease of Implementation</h3>
+                <p>BlockVote integrates seamlessly with existing systems, simplifying the transition to a modern voting platform.</p>
+            </div>
+            <div class="whycontainer">
+                <img src="../images/people.svg" alt="" srcset="">
+                <h3>Voter Confidence</h3>
+                <p>By offering a transparent, accessible, voting process, governments and organizations can increase voter turnout and trust in the electoral process.</p>
+            </div>
+        </div>
+    </section>
+    <section class="ready">
+        <div class="votercontainer1">
+            <img src="../images/Group2.png" alt="" srcset="" class="votergroup2img">
+                <h1 class="h1">Ready to Elevate Your Elections?</h1>
+            
+            <div class="">
+                <p>See how BlockVote can transform your electoral process with security, transparency, and efficiency.</p>
+            </div>
+            <button>Schedule a consultation</button>
+        </div>
+      </section>
+      <section class="faq-container" id="faq">
+        <div class="faq-left">
+          <h2>Polling Unit Officers</h2>
+          <h1 class="h1">FAQ</h1>
+          <p>
+            Everything you need to know about the product and billing. Can't find the answer you're looking for?
+            <a href="#">Get in touch</a>
+          </p>
+        </div>
+    
+        <div class="faq-right">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>What is the technology behind blockvote</span>
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>We periodically check if the Linear desktop app is installed on your computer. We achieve
+                this by sending network requests to your localhost (your computer) on different ports. Each
+                port check helps us determine if our desktop app is running. This then allows us to seamlessly open certain URLs directly in the desktop app, enhancing your user experience
+                and ensuring better integration between our web and desktop applications.</p>
+            </div>
+          </div>
+    
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>What is VVPAT ?</span>
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>We periodically check if the Linear desktop app is installed on your computer. We achieve
+                this by sending network requests to your localhost (your computer) on different ports. Each
+                port check helps us determine if our desktop app is running. This then allows us to
+                seamlessly open certain URLs directly in the desktop app, enhancing your user experience
+                and ensuring better integration between our web and desktop applications.</p>
+            </div>
+          </div>
+    
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>How many times can the voters scan their fingers</span>
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>We periodically check if the Linear desktop app is installed on your computer. We achieve
+                this by sending network requests to your localhost (your computer) on different ports. Each
+                port check helps us determine if our desktop app is running. This then allows us to
+                seamlessly open certain URLs directly in the desktop app, enhancing your user experience
+                and ensuring better integration between our web and desktop applications.</p>
+            </div>
+          </div>
+    
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>What happens when there is no network</span>
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>We periodically check if the Linear desktop app is installed on your computer. We achieve
+                this by sending network requests to your localhost (your computer) on different ports. Each
+                port check helps us determine if our desktop app is running. This then allows us to
+                seamlessly open certain URLs directly in the desktop app, enhancing your user experience
+                and ensuring better integration between our web and desktop applications.</p>
+            </div>
+          </div>
+    
+          <div class="see-more">
+            <a href="#">See more</a>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer-left">
+    
+          <div class="logo2">
+            <img src="../images/Logo.svg" alt="Logo" srcset="" /><span
+            >Blockvote</span
+            >
+          </div>
+          <div class="footer-icon">
+            <img src="../images/facebook.svg" alt="" srcset="">
+            <img src="../images/instagram.svg" alt="" srcset="">
+            <img src="../images/whatsapp.svg" alt="" srcset="">
+          </div>
+        </div>
+        <div class="footer-link">
+    <a href="../Voters//voters.html">Voters</a>
+    <a href="../Admins/admins.html">Polling Unit Officers</a>
+    <a href="#">ControlCenter</a>
+        </div>
+      </footer>
+      <script src="../index.js"></script>
+</body>
+</html>
