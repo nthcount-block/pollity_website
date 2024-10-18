@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-}
+
 
 body, html {
     margin: 0;
@@ -351,3 +349,134 @@ body, html {
     color: #595959;
     font-weight: 700;
   }
+
+  @media (max-width: 768px) {
+      .h1 {
+        font-size: 3rem;
+      }
+      .navbar {
+        position: relative;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        /* position: absolute; */
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        /* width: 100%; */
+        /* height: 100vh; */
+        text-align: right;
+        padding: 20px;
+        color: white;
+      }
+    
+      .nav-links li {
+        margin: 20px 0;
+        color: white;
+      }
+    /*   
+      .cta-button {
+        margin-top: 20px;
+        display: hidden;
+      } */
+      #btn {
+        display: none;
+      }
+    
+      .hamburger {
+        display: flex;
+      }
+    
+      /* Toggle the menu */
+      .menu.active {
+        display: flex;
+      }
+    
+      /* Hamburger icon animation */
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+    
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+    
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .admin-hero {
+        max-width: 90vw;
+        /* background-color: red; */
+      }
+      .admin-hero h1 {
+        max-width: 90vw;
+        
+      }
+      .admin-hero p {
+        min-width: 80vw;
+     
+      }
+      .admin-hero img {
+        min-width: 100%;
+      }
+      /* slider */
+      .adminslider h1 {
+        min-width: 90%;
+      }
+      .adminsliderflex {
+        flex-direction: column;
+      }
+      .adminsliderflex > img {
+        width: 100%;
+        /* padding: 0; */
+      }
+      .adminslidercontent {
+        width: 90%;
+      }
+
+      /* admins why */
+      .adminswhy h1 {
+        min-width: 90%;
+      }
+      .whyflex {
+        flex-direction: column;
+        width: 95vw;
+      }
+/* ready */
+      .votercontainer1 h1 {
+        font-size: 3rem;
+        min-width: 80vw;
+        text-align: center;
+        /* background-color: red; */
+      }
+      .votercontainer1 p {
+        max-width: 90%;
+        margin: 10px auto 50px;
+      }
+
+    /* faqs */
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .faq-left {
+      max-width: 80vw;
+    }
+    .faq-left h1 {
+      min-width: 100%;
+    }
+    .faq-right {
+      width: 100vw;
+    }
+    /* footer */
+    .footer {
+      flex-direction: column;
+      align-items: start;
+      padding: 50px 30px;
+      gap: 50px;
+    }
+
+}
