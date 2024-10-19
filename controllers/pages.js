@@ -4,3 +4,11 @@ exports.getIndex = (req, res, next) => {
         path: "/",
     });
 };
+
+exports.getVoter = (req, res, next) => {
+    res.render("home", {
+        pageTitle: "Voters Page",
+        path: "/",
+    });
+}
+

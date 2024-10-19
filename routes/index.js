@@ -7,6 +7,7 @@ const pages = require('../controllers/pages');
 const router = express.Router();
 
 router.get('/', pages.getIndex);
+router.get('/voters', pages.getVoter);
 
 
 module.exports = router;
