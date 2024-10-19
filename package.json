@@ -1,0 +1,24 @@
+{
+  "name": "pollity",
+  "version": "1.0.0",
+  "description": "Pollity website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nthcount-block/pollity_website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nthcount-block/pollity_website/issues"
+  },
+  "homepage": "https://github.com/nthcount-block/pollity_website#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  }
+}
