@@ -1009,10 +1009,10 @@ body, html {
       display: flex;
       flex-direction: column;
     }
-    .left-section {
+    /* .left-section {
       /* width: 90vw; */
-      /* background-color: red; */
-    }
+      /* background-color: red; 
+    } */
     .left-section h1 {
       text-align: left;
       font-size: 2.5rem;

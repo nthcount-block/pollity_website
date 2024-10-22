@@ -11,7 +11,7 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 
 router.get('/', (req, res) => {
-    res.render('home');  // Renders the index.ejs file
+    res.render('home');  
   });
 
 const routes = require("./routes/");
