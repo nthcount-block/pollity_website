@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet"/>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css" />
+     <!-- Add GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+ 
+
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -55,7 +60,7 @@
     <!-- Why Blockvote section -->
      <section  class="why">
       <h1 class="h1">Why Blockvote</h1>
-      <div class="whydiv">
+      <div class="whydiv whydiv1">
         <img src="images/Image5.png" alt="woman" class="whyimage desktop-image" />
         <img src="images/smileygirlmobile.png" alt="woman" class="whyimage mobile-image" />
         <div class="whytext">
@@ -69,12 +74,40 @@
           </p>
         </div>
       </div>
+      <div class="whydiv whydiv2">
+        <img src="images/Image5.png" alt="woman" class="whyimage desktop-image" />
+        <img src="images/smileygirlmobile.png" alt="woman" class="whyimage mobile-image" />
+        <div class="whytext">
+          <h1 class="h1">Cut Costssss, Not Corners</h1 class="h1">
+          <p>
+            Traditional voting systems can be expensive and slow to update. With
+            BlockVote, you eliminate the high costs of paper ballots, manual
+            processes, and outdated equipment. Our system automates and
+            digitizes the entire voting process, which saves time and
+            significantly reduces costs, while still delivering high-quality
+          </p>
+        </div>
+      </div>
+      <div class="whydiv whydiv3">
+        <img src="images/Image5.png" alt="woman" class="whyimage desktop-image" />
+        <img src="images/smileygirlmobile.png" alt="woman" class="whyimage mobile-image" />
+        <div class="whytext">
+          <h1 class="h1">Cut Costs, Not Cornerssss</h1 class="h1">
+          <p>
+            Traditional voting systems can be expensive and slow to update. With
+            BlockVote, you eliminate the high costs of paper ballots, manual
+            processes, and outdated equipment. Our system automates and
+            digitizes the entire voting process, which saves time and
+            significantly reduces costs, while still delivering high-quality
+          </p>
+        </div>
+      </div>
     </section> 
 <!-- Bringing Integrity -->
- <section>
-  <h1 class="h1 integrityh1">Bringing Integrity and innovation to every step of the voting process</h1>
+ <section class="integritysection">
+  <h1 class="h1 integrityh1"><span>Bringing Integrity and innovation to </span><span>step of the voting process</span></h1>
   <div class="integritydiv">
-    <!-- <img src="../images/bgimg.png" alt="" srcset="" class="bgimg"> -->
+    
     <img src="images/Group.png" alt="" srcset="" class="groupimg">
   </div>
  </section>
@@ -307,7 +340,8 @@
         <a href="admins">Polling Unit Officers</a>
         <a href="#">ControlCenter</a>
     </div>
+
   </footer>
-    <script src="js/index.js"></script>
+    <script type="module" src="js/index.js"></script>
   </body>
 </html>

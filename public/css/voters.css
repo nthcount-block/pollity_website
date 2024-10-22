@@ -176,8 +176,11 @@ body, html {
 .atblockvote {
     background-color: #91FDC5;
     text-align: center;
-    color: #004B52;
+    color: lightgreen;
     padding: 3rem 0;
+}
+.atblockvote.change-color {
+  color: #004B52; /* Color when changed */
 }
 .atblockvote p {
     font-weight: bolder;
@@ -187,6 +190,7 @@ body, html {
     margin: auto;
     font-size: 3rem;
     font-weight: normal;
+    /* opacity: 0; */
     /* text-align: justify; */
 }
 /* slider styles */
