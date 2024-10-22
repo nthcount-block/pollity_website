@@ -100,14 +100,11 @@ body, html {
     /* padding-left: 500px; */
   }
   
-  /* .hero-content h1 {
-    font-size: 6rem;
-    line-height: 1.2;
-    font-weight: lighter;
-    width: 50%;
-    margin: auto;
-    letter-spacing: 1px;
-  } */
+  .hero-content {
+    animation: zoom-in 1s ease-out forwards;
+    opacity: 0;
+  
+  }
 
   .hero-content p {
     font-size: 1.2rem;
@@ -148,22 +145,28 @@ body, html {
     position: absolute;
     top: 100px;
     left: 200px;
+    animation: slide-in-left 1.5s ease-out forwards;
+
   }
   
   .img-top-right {
     position: absolute;
     top: 200px;
     right: 200px;
+    animation: slide-in-right 1.5s ease-out forwards;
+
   }
   
   .img-bottom-left {
     bottom: 100px;
     left: 200px;
+    animation: slide-in-left 1.8s ease-out forwards;
   }
   
   .img-bottom-right {
     bottom: 50px;
     right: 200px;
+    animation: slide-in-right 1.8s ease-out forwards;
   }
 /* Why section styles */
   .h1 {
@@ -174,6 +177,13 @@ body, html {
     color: #004B52;
     /* max-width: 50vw; */
   }
+  .why {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .whydiv {
     background-color: #001C1F;
     /* height: 90vh; */
@@ -182,7 +192,57 @@ body, html {
     border-radius: 20px;
     display: flex;
     gap: 5rem;
+    transition: transform 0.5s ease, opacity  0.5 ease;
     /* padding: 20px; */
+    position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  }
+  .whydiv1 {
+    opacity: 1;
+  z-index: 3;
+  transform: scale(1);
+  }
+  .whydiv2 {
+    /* display: none; */
+    position: absolute;
+  /* top: -10; */
+  /* left: 10; */
+  /* bottom: -; */
+  /* width: 100%; */
+  /* height: 100%; */
+    transform: translateY(-20px) scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .whydiv3 {
+    /* display: none; */
+    position: absolute;
+    /* top: 0; */
+    /* left: 0; */
+    /* width: 100%; */
+    /* height: 100%; */
+    transform: translateY(-40px) scale(0.9) ;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1;
+    cursor: pointer;
+    visibility: hidden;
+  }
+  .show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    z-index: 2;
+    visibility: visible;
+  }
+  .whydiv2.show {
+    transform: translateY(0px) scale(1);
+  }
+  
+  .whydiv3.show {
+    transform: translateY(0px) scale(1);
   }
   .whyimage {
     height: auto;
@@ -225,16 +285,29 @@ body, html {
   }
   
   /* integrity section */
+  .integritysection {
+    min-height: 100vh;
+  }
   .integritydiv {
     position: relative;
     background-image: url('../images/bgimg.png');
+    background-color: #063d33;
     margin: 50px auto;
     display: flex;
+    /* border: 2px solid black; */
     width: 70vw;
-    max-height: 700px;
-    object-fit: cover;
+    min-height: 700px;
+    /* object-fit: cover; */
     border-radius: 24px;
+    z-index: 50;
   }
+  .integrityh1 {
+    max-width: 70vw;
+    margin: auto;
+    padding-top: 150px;
+  }
+
+  /* Designed for everyone */
  .section4 {
   padding: 100px 0px;
  }
@@ -254,7 +327,7 @@ body, html {
     /* border: 2px solid #001C1F; */
     padding-bottom: 70px;
     background-color: white;
-    /* position: absolute; */
+    position: absolute;
     top: 0;
     left: 120px;
   }
@@ -823,9 +896,9 @@ body, html {
     }
   }
   
-  .hero {
+  .hero-content {
     opacity: 0;
-    animation: fadeIn 2s forwards;
+    animation: fadeIn 5s forwards;
   }
   
   /* Media Queries for Mobile */
@@ -989,6 +1062,39 @@ body, html {
     }
   }
    
+  @keyframes zoom-in {
+    0% {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
   /* Mobile styles */
   @media screen and (max-width: 768px) {
     .navbar {

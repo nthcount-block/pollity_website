@@ -103,8 +103,17 @@ body, html {
     padding:  50px;
     border-radius: 24px;
     position: relative;
+    overflow: hidden;
   }
- 
+  .admin-hero h1,
+  .admin-hero p,
+  .admin-hero button,
+  .admin-hero img {
+      /* opacity: 0; Start with invisible elements */
+      transform: translateY(50px); /* Move elements down for sliding effect */
+      margin: 20px 0; /* Margin for spacing */
+  }
+
   
   .admin-hero p {
     text-align: center;

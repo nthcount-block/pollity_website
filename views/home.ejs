@@ -3,33 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pollity</title>
+    <title> <%= pageTitle %></title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet"/>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="css/index.css" />
+     <!-- Add GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+ 
+
   </head>
   <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="logo">
-        <a href="../Home/index.html" class="logo">
-
-          <img src="../images/Logo.svg" alt="Logo" srcset="" /><span
-          >Pollity</span
-          >
-      </a>
+        <a href="/" class="logo">
+          <img src="images/Logo.svg" alt="Logo" srcset="" /><span>Pollity</span>
+        </a>
       </div>
       <div class="hamburger" id="hamburger">
-        <img src="../images/menu.svg" alt="" srcset="">
+        <img src="images/menu.svg" alt="" srcset="">
       </div>
       <ul class="nav-links menu" id="menu">
-        <li><a href="../Voters/voters.html">Voters</a></li>
-        <li><a href="../Admins/admins.html">Admins</a></li>
+        <li><a href="voters">Voters</a></li>
+        <li><a href="admins">Admins</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
       <a href="#" class="cta-button" id="btn">Schedule a consultation</a>
@@ -52,34 +51,18 @@
 
       <!-- People Images Around the Hero -->
       <div class="people-images floating-images">
-        <img
-          src="../images/Image.png"
-          class="person person-1 img-top-left"
-          alt="Person 1"
-        />
-        <img
-          src="../images/Image2.png"
-          class="person person-2 img-top-right"
-          alt="Person 2"
-        />
-        <img
-          src="../images/Image4.png"
-          class="person person-3 img-bottom-left"
-          alt="Person 3"
-        />
-        <img
-          src="../images/Image3.png"
-          class="person person-4 img-bottom-right"
-          alt="Person 4"
-        />
+        <img src="images/Image.png" class="person person-1 img-top-left" alt="Person 1" />
+        <img src="images/Image2.png" class="person person-2 img-top-right" alt="Person 2" />
+        <img src="images/Image4.png" class="person person-3 img-bottom-left" alt="Person 3" />
+        <img src="images/Image3.png" class="person person-4 img-bottom-right" alt="Person 4" />
       </div>
     </section>
     <!-- Why Blockvote section -->
      <section  class="why">
       <h1 class="h1">Why Blockvote</h1>
-      <div class="whydiv">
-        <img src="../images//Image5.png" alt="woman" class="whyimage desktop-image" />
-        <img src="../images//smileygirlmobile.png" alt="woman" class="whyimage mobile-image" />
+      <div class="whydiv whydiv1">
+        <img src="images/Image5.png" alt="woman" class="whyimage desktop-image" />
+        <img src="images/smileygirlmobile.png" alt="woman" class="whyimage mobile-image" />
         <div class="whytext">
           <h1 class="h1">Cut Costs, Not Corners</h1 class="h1">
           <p>
@@ -91,13 +74,41 @@
           </p>
         </div>
       </div>
+      <div class="whydiv whydiv2">
+        <img src="images/Image5.png" alt="woman" class="whyimage desktop-image" />
+        <img src="images/smileygirlmobile.png" alt="woman" class="whyimage mobile-image" />
+        <div class="whytext">
+          <h1 class="h1">Cut Costssss, Not Corners</h1 class="h1">
+          <p>
+            Traditional voting systems can be expensive and slow to update. With
+            BlockVote, you eliminate the high costs of paper ballots, manual
+            processes, and outdated equipment. Our system automates and
+            digitizes the entire voting process, which saves time and
+            significantly reduces costs, while still delivering high-quality
+          </p>
+        </div>
+      </div>
+      <div class="whydiv whydiv3">
+        <img src="images/Image5.png" alt="woman" class="whyimage desktop-image" />
+        <img src="images/smileygirlmobile.png" alt="woman" class="whyimage mobile-image" />
+        <div class="whytext">
+          <h1 class="h1">Cut Costs, Not Cornerssss</h1 class="h1">
+          <p>
+            Traditional voting systems can be expensive and slow to update. With
+            BlockVote, you eliminate the high costs of paper ballots, manual
+            processes, and outdated equipment. Our system automates and
+            digitizes the entire voting process, which saves time and
+            significantly reduces costs, while still delivering high-quality
+          </p>
+        </div>
+      </div>
     </section> 
 <!-- Bringing Integrity -->
- <section>
-  <h1 class="h1 integrityh1">Bringing Integrity and innovation to every step of the voting process</h1>
+ <section class="integritysection">
+  <h1 class="h1 integrityh1"><span>Bringing Integrity and innovation to </span><span>step of the voting process</span></h1>
   <div class="integritydiv">
-    <!-- <img src="../images/bgimg.png" alt="" srcset="" class="bgimg"> -->
-    <img src="../images/Group.png" alt="" srcset="" class="groupimg">
+    
+    <img src="images/Group.png" alt="" srcset="" class="groupimg">
   </div>
  </section>
  <!-- Designed for evryone -->
@@ -109,17 +120,17 @@
           <h3>Multi-language support</h3>
           <p>Communicate in the language your voters understand best.</p>
          
-          <img src="../images/Display.svg" alt="" srcset="" class="displayimg">
+          <img src="images/Display.svg" alt="" srcset="" class="displayimg">
         </div>
   
       <div class="card">
           <h3>Accessibility Features</h3>
           <p>Voice guidance, scalable text, and easy navigation ensure everyone can vote with confidence.</p>
           <div class="icons">
-            <img src="../images/Icon.svg" alt="" srcset="" class="icon icon1">
-            <img src="../images/Icon1.svg" alt="" srcset="" class="icon icon2">
-            <img src="../images/Icon2.svg" alt="" srcset="" class="icon icon3">
-            <img src="../images/Icon3.svg" alt="" srcset="" class="icon icon4">
+            <img src="images/Icon.svg" alt="" srcset="" class="icon icon1">
+            <img src="images/Icon1.svg" alt="" srcset="" class="icon icon2">
+            <img src="images/Icon2.svg" alt="" srcset="" class="icon icon3">
+            <img src="images/Icon3.svg" alt="" srcset="" class="icon icon4">
              
           </div>
       </div>
@@ -128,30 +139,29 @@
   <!-- why section -->
   <section class="">
     <div class="container">
-      <img src="../images/Group 1.svg" alt="" srcset="" class="group1img">
+      <img src="images/Group 1.svg" alt="" srcset="" class="group1img">
             <div class="left-section">
           <h1 class="h1">Why choose<br>Pollity</h1>
       </div>
       <div class="right-section">
           <div class="feature">
               <div class="icon-container">
-                  <img src="../images/size.svg" alt="" srcset="">
+                  <img src="images/size.svg" alt="" srcset="">
               </div>
               <h3>Customizable and Scalable</h3>
               <p>Whether you're running a small organizational vote or a large-scale national election, BlockVote scales to meet your needs.</p>
           </div>
           <div class="feature">
               <div class="icon-container">
-                  
-                  <img src="../images/Headset3.svg" alt="" srcset="">
+                <img src="images/Headset3.svg" alt="" srcset="">
               </div>
               <h3>Expert Support</h3>
               <p>Our team is with you every step of the way, providing dedicated support to ensure your election is a success.</p>
           </div>
           <div class="feature">
               <div class="icon-container">
-                  <!-- <div class="icon">🔗</div> -->
-                   <img src="../images/scanner.svg" alt="" srcset="">
+                <!-- <div class="icon">🔗</div> -->
+                <img src="images/scanner.svg" alt="" srcset="">
               </div>
               <h3>Seamless Integration</h3>
               <p>BlockVote fits right into your existing infrastructure, with minimal setup and maximum impact.</p>
@@ -217,14 +227,14 @@
   
       <div class="infocards-container">
           <div class="infocard active" id="card-1">
-              <img src="../images/Avatar1.png" alt="Voter" />
+              <img src="images/Avatar1.png" alt="Voter" />
               <h3>Voters</h3>
               <p>Cast your vote quickly and securely with a user-friendly interface designed for simplicity.</p>
               <a href="#" class="learn-more">Learn More →</a>
           </div>
   
           <div class="infocard" id="card-2">
-              <img src="../images/image6.png" alt="Polling Officer" />
+              <img src="images/image6.png" alt="Polling Officer" />
               <h3>Polling Unit Officers</h3>
               <p>Manage voter accreditation and security with easy-to-use tools.</p>
               <a href="#" class="learn-more">Learn More →</a>
@@ -233,7 +243,7 @@
      
   </section>
   <div class="container1">
-    <img src="../images/Group2.png" alt="" srcset="" class="group2img">
+    <img src="images/Group2.png" alt="" srcset="" class="group2img">
         <h1 class="h1">Ready to Elevate Your Elections?</h1>
     
     <div class="">
@@ -317,22 +327,21 @@
     <div class="footer-left">
 
       <div class="logo2">
-        <img src="../images/Logo.svg" alt="Logo" srcset="" /><span
-        >Pollity</span
-        >
+        <img src="images/Logo.svg" alt="Logo" srcset="" /><span>Pollity</span>
       </div>
       <div class="footer-icon">
-        <img src="../images/facebook.svg" alt="" srcset="">
-        <img src="../images/instagram.svg" alt="" srcset="">
-        <img src="../images/whatsapp.svg" alt="" srcset="">
+        <img src="images/facebook.svg" alt="" srcset="">
+        <img src="images/instagram.svg" alt="" srcset="">
+        <img src="images/whatsapp.svg" alt="" srcset="">
       </div>
     </div>
     <div class="footer-link">
-<a href="#">Voters</a>
-<a href="#">Polling Unit Officers</a>
-<a href="#">ControlCenter</a>
+        <a href="voters">Voters</a>
+        <a href="admins">Polling Unit Officers</a>
+        <a href="#">ControlCenter</a>
     </div>
+
   </footer>
-    <script src="../index.js"></script>
+    <script type="module" src="js/index.js"></script>
   </body>
 </html>

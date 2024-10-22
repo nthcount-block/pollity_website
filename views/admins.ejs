@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admins</title>
+    <title><%= pageTitle %></title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,24 +11,23 @@
       rel="stylesheet"
     />
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="admins.css" />
+    <link rel="stylesheet" href="css/admins.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 </head>
 <body>
     <!-- navbar -->
     <nav class="navbar">
         
-            <a href="../Home/index.html" class="logo">
-
-                <img src="../images/Logo.svg" alt="Logo" srcset="" /><span
-                >Pollity</span
-                >
+            <a href="/" class="logo">
+              <img src="images/Logo.svg" alt="Logo" srcset="" /><span>Pollity</span>
             </a>
         <div class="hamburger" id="hamburger">
-          <img src="../images/menu.svg" alt="" srcset="">
+          <img src="images/menu.svg" alt="" srcset="">
         </div>
         <ul class="nav-links menu" id="menu">
-          <li><a href="../Voters/voters.html">Voters</a></li>
-          <li><a href="../Admins/admins.html">Admins</a></li>
+          <li><a href="/voters">Voters</a></li>
+          <li><a href="/admins">Admins</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
         <a href="#" class="cta-button" id="btn">Schedule a consultation</a>
@@ -42,14 +41,14 @@
                 <p>BlockVote provides government bodies and organizations with the technology needed to manage elections securely and efficiently. </p>
             <!-- </div> -->
             <button>Schedule a consultation</button>
-            <img src="../images/Group.png" alt="" srcset="">
+            <img src="images/Group.png" alt="" srcset="">
         </div>
        </section>
        <section class="adminslider">
         <h1 class="h1">Why Pollity is the Right Choice for Your Voters</h1>
         <div class="adminslidercontainer">
         <div class="adminsliderflex">
-            <img src="../images/couple.png" alt="" srcset="">
+            <img src="images/couple.png" alt="" srcset="">
 
                 <div class="adminslidercontent">
                     <h1>For Polling Unit Officers</h1>
@@ -73,17 +72,17 @@
         <h1 class="h1">Why Trust Pollity</h1>
         <div class="whyflex">
             <div class="whycontainer">
-                <img src="../images/security.svg" alt="" srcset="">
+                <img src="images/security.svg" alt="" srcset="">
                 <h3>Security and Compliance</h3>
                 <p>Ensure all votes are securely recorded and comply with legal standards, reducing the risk of fraud and enhancing electoral integrity.</p>
             </div>
             <div class="whycontainer">
-                <img src="../images/list.svg" alt="" srcset="">
+                <img src="images/list.svg" alt="" srcset="">
                 <h3>Ease of Implementation</h3>
                 <p>BlockVote integrates seamlessly with existing systems, simplifying the transition to a modern voting platform.</p>
             </div>
             <div class="whycontainer">
-                <img src="../images/people.svg" alt="" srcset="">
+                <img src="images/people.svg" alt="" srcset="">
                 <h3>Voter Confidence</h3>
                 <p>By offering a transparent, accessible, voting process, governments and organizations can increase voter turnout and trust in the electoral process.</p>
             </div>
@@ -91,7 +90,7 @@
     </section>
     <section class="ready">
         <div class="votercontainer1">
-            <img src="../images/Group2.png" alt="" srcset="" class="votergroup2img">
+            <img src="images/Group2.png" alt="" srcset="" class="votergroup2img">
                 <h1 class="h1">Get Started with Pollity</h1>
             
             <div class="">
@@ -175,22 +174,23 @@
         <div class="footer-left">
     
           <div class="logo2">
-            <img src="../images/Logo.svg" alt="Logo" srcset="" /><span
+            <img src="images/Logo.svg" alt="Logo" srcset="" /><span
             >Pollity</span
             >
           </div>
           <div class="footer-icon">
-            <img src="../images/facebook.svg" alt="" srcset="">
-            <img src="../images/instagram.svg" alt="" srcset="">
-            <img src="../images/whatsapp.svg" alt="" srcset="">
+            <img src="images/facebook.svg" alt="" srcset="">
+            <img src="images/instagram.svg" alt="" srcset="">
+            <img src="images/whatsapp.svg" alt="" srcset="">
           </div>
         </div>
         <div class="footer-link">
-    <a href="../Voters//voters.html">Voters</a>
-    <a href="../Admins/admins.html">Polling Unit Officers</a>
+    <a href="/voters">Voters</a>
+    <a href="/admins">Polling Unit Officers</a>
     <a href="#">ControlCenter</a>
         </div>
       </footer>
-      <script src="../index.js"></script>
+      <script src="js/admins.js"></script>
+      
 </body>
 </html>

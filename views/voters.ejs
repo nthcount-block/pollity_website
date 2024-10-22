@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voters</title>
+    <title><%= pageTitle %></title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,24 +11,23 @@
       rel="stylesheet"
     />
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="voters.css" />
+    <link rel="stylesheet" href="css/voters.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 </head>
 <body>
      <!-- Navigation Bar -->
      <nav class="navbar">
-            <a href="../Home/index.html" class="logo">
-
-                <img src="../images/Logo.svg" alt="Logo" srcset="" /><span
-                >Pollity</span
-                >
+            <a href="/" class="logo">
+              <img src="images/Logo.svg" alt="Logo" srcset="" /><span>Pollity</span>
             </a>
         
         <div class="hamburger" id="hamburger">
-          <img src="../images/menu.svg" alt="" srcset="">
+          <img src="images/menu.svg" alt="" srcset="">
         </div>
         <ul class="nav-links menu" id="menu">
-          <li><a href="../Voters/voters.html">Voters</a></li>
-          <li><a href="../Admins/admins.html">Admins</a></li>
+          <li><a href="/voters">Voters</a></li>
+          <li><a href="/admins">Admins</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
         <a href="#" class="cta-button" id="btn">Schedule a consultation</a>
@@ -36,30 +35,41 @@
       <!-- hero section -->
       <section class="voter-hero">
         <div class="voter-content">
-            <h1 class="h1">Empower Voters with a Seamless and Secure Voting Experience</h1>
+            <h1 class="h1"><span>
+              Empower Voters with a Seamless
+            </span> <span> and Secure Voting Experience </span></h1>
             <button class="voter-btn">Schedule a consultation</button>
         </div>
         <div class="voter-images">
             <div class="voter-img-group one ">
-                <img src="../images/smileygirl.png" alt="Voter image 1" class="voter-img tall">
-                <img src="../images/Image7.png" alt="Voter image 2" class="voter-img tall">
+                <img src="images/smileygirl.png" alt="Voter image 1" class="voter-img tall">
+                <img src="images/Image7.png" alt="Voter image 2" class="voter-img tall">
             </div>
             <div class="voter-img-group two">
-                <img src="../images/smileyguy.png" alt="Voter image 3" class="voter-img short">
-                <img src="../images/youngguy.png" alt="Voter image 3" class="voter-img tall">
-                <img src="../images/girl.png" alt="Voter image 4" class="voter-img medium">
+                <img src="images/smileyguy.png" alt="Voter image 3" class="voter-img short">
+                <img src="images/youngguy.png" alt="Voter image 3" class="voter-img tall">
+                <img src="images/girl.png" alt="Voter image 4" class="voter-img medium">
             </div>
         </div>
     </section>
     <section class="atblockvote">
-        <p>At Pollity</p>
-        <h1 class="">We believe that every vote matters. That’s why we’ve designed a voting experience that is simple, secure, and accessible to all voters, ensuring that every voice is accurately represented in your elections.</h1>
+        <!-- <p>At Pollity</p>
+        <h1 class="">We believe that every vote matters. That’s why we’ve designed a voting experience that is simple, secure, and accessible to all voters, ensuring that every voice is accurately represented in your elections.</h1> -->
+        <p><span>At</span> <span>Pollity</span></p>
+    <h1>
+        <span>We</span> <span>believe</span> <span>that</span> <span>every</span> <span>vote</span> <span>matters.</span>
+        <span>That’s</span> <span>why</span> <span>we’ve</span> <span>designed</span> <span>a</span> <span>voting</span> 
+        <span>experience</span> <span>that</span> <span>is</span> <span>simple,</span> <span>secure,</span> 
+        <span>and</span> <span>accessible</span> <span>to</span> <span>all</span> <span>voters,</span> 
+        <span>ensuring</span> <span>that</span> <span>every</span> <span>voice</span> <span>is</span> 
+        <span>accurately</span> <span>represented</span> <span>in</span> <span>your</span> <span>elections.</span>
+    </h1>
     </section>
     <section class="slider">
         <h1 class="h1">Why Pollity is the Right Choice for Your Voters</h1>
         <div class="slidercontainer">
         <div class="sliderflex">
-            <img src="../images/ready.png" alt="" srcset="">
+            <img src="images/ready.png" alt="" srcset="">
 
                 <div class="slidercontent">
                     <h1>VVPAT: Secure Printed Record for Every Vote</h1>
@@ -67,7 +77,7 @@
                 </div>
             </div>
         <!-- <div class="sliderflex">
-            <img src="../images/ready.png" alt="" srcset="">
+            <img src="images/ready.png" alt="" srcset="">
 
                 <div class="slidercontent">
                     <h1>Very Easy to Navigate</h1>
@@ -75,7 +85,7 @@
                 </div>
             </div>
         <div class="sliderflex">
-            <img src="../images/ready.png" alt="" srcset="">
+            <img src="images/ready.png" alt="" srcset="">
 
                 <div class="slidercontent">
                     <h1>Simple-Self Accreditation</h1>
@@ -87,14 +97,14 @@
     <!-- How blockvote -->
     <section class="">
         <div class="votercontainer">
-          <!-- <img src="../images/Group 1.svg" alt="" srcset="" class="group1img"> -->
+          <!-- <img src="images/Group 1.svg" alt="" srcset="" class="group1img"> -->
                 <div class="voterleft-section">
               <h1 class="h1">How Pollity Enhances the Voter Experience</h1>
           </div>
           <div class="voterright-section">
               <div class="voterfeature">
                   <div class="votericon-container">
-                      <img src="../images/scanner.svg" alt="" srcset="">
+                      <img src="images/scanner.svg" alt="" srcset="">
                   </div>
                   <h3>Intutive Interface</h3>
                   <p>Voters navigate through a
@@ -107,7 +117,7 @@
               <div class="voterfeature">
                   <div class="votericon-container">
                       
-                      <img src="../images/Wheelchair.svg" alt="" srcset="">
+                      <img src="images/Wheelchair.svg" alt="" srcset="">
                   </div>
                   <h3>Accessbility features
                 </h3>
@@ -121,7 +131,7 @@
               <div class="voterfeature">
                   <div class="votericon-container">
                       
-                       <img src="../images/chart.svg" alt="" srcset="">
+                       <img src="images/chart.svg" alt="" srcset="">
                   </div>
                   <h3>Real-Time Monitoring
                 </h3>
@@ -134,7 +144,7 @@
               <div class="voterfeature">
                   <div class="votericon-container">
                       
-                       <img src="../images/shield.svg" alt="" srcset="">
+                       <img src="images/shield.svg" alt="" srcset="">
                   </div>
                   <h3>Top-Tier Security
                 </h3>
@@ -149,7 +159,7 @@
       </section>
       <section class="ready">
         <div class="votercontainer1">
-            <img src="../images/Group2.png" alt="" srcset="" class="votergroup2img">
+            <img src="images/Group2.png" alt="" srcset="" class="votergroup2img">
                 <h1 class="h1">Get Started with Pollity</h1>
             
             <div class="">
@@ -233,22 +243,22 @@
         <div class="footer-left">
     
           <div class="logo2">
-            <img src="../images/Logo.svg" alt="Logo" srcset="" /><span
+            <img src="images/Logo.svg" alt="Logo" srcset="" /><span
             >Pollity</span
             >
           </div>
           <div class="footer-icon">
-            <img src="../images/facebook.svg" alt="" srcset="">
-            <img src="../images/instagram.svg" alt="" srcset="">
-            <img src="../images/whatsapp.svg" alt="" srcset="">
+            <img src="images/facebook.svg" alt="" srcset="">
+            <img src="images/instagram.svg" alt="" srcset="">
+            <img src="images/whatsapp.svg" alt="" srcset="">
           </div>
         </div>
         <div class="footer-link">
-    <a href="#">Voters</a>
-    <a href="#">Polling Unit Officers</a>
-    <a href="#">ControlCenter</a>
+          <a href="#">Voters</a>
+          <a href="#">Polling Unit Officers</a>
+          <a href="#">ControlCenter</a>
         </div>
       </footer>
-      <script src="../index.js"></script>
+      <script src="js/voters.js"></script>
 </body>
 </html>
