@@ -10,10 +10,6 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", "views");
 
-router.get('/', (req, res) => {
-    res.render('home');  
-  });
-
 const routes = require("./routes/");
 
 app.use(bodyParser.urlencoded({ extended: false }));

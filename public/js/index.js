@@ -2,25 +2,25 @@
 // import { gsap } from "/node_modules/gsap/index.js"
 // import { ScrollTrigger } from "/node_modules/gsap/ScrollTrigger.js";
 // Wait for the DOM to fully load
-
+console.log('hhhhhh')
 
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(MotionPathPlugin);
+
 
   // Create the animation for the words in the h1
   gsap.from(".integritydiv, .integrityh1 span", {
     scrollTrigger: {
-      trigger: ".integrityh1", // Start the animation when ".integritydiv" enters the viewport
-      start: "top 80%", // Start animation when the section reaches 80% from the top of the viewport
-      end: "top 60%", // End when 60% of the viewport is reached
+      trigger: ".integritysection", 
+      start: "top 80%", 
+      end: "top 60%", 
       toggleActions: "play none none none",
     },
-    opacity: 0, // Start with invisible words
-    y: 200, // Move the words 50px upwards
-    duration: 1.5, // Animation duration
+    opacity: 0, 
+    y: 200, 
+    duration: 1.5, 
     ease: "power2.out",
-    stagger: 0.1, // Stagger the animation so each word starts 0.1 seconds after the previous one
+    stagger: 0.1, 
   });
 
 gsap.timeline({
@@ -70,6 +70,7 @@ const menu = document.getElementById('menu');
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   menu.classList.toggle('active');
+  console.log('jhh')
 });
 
 // why pollity section
