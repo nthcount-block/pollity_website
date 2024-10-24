@@ -1,8 +1,4 @@
-// import { gsap }  from "gsap";
-// import { gsap } from "/node_modules/gsap/index.js"
-// import { ScrollTrigger } from "/node_modules/gsap/ScrollTrigger.js";
-// Wait for the DOM to fully load
-console.log('hhhhhh')
+
 
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
@@ -59,54 +55,100 @@ gsap.timeline({
 .to(".icon4", { x: 100, y: -100 }, "<");  // icon4 moves to icon1's position
 
 
+function isMobile() {
+  return window.innerWidth < 768; // Adjust based on mobile breakpoint
+}
 
+// if (!isMobile()) {
+//   // Target all `.whydiv` elements
+//   gsap.utils.toArray('.whydiv').forEach((whydiv, index) => {
+//     const tl = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: '.why', 
+//         start: 'top center', // Start animation when `.why` reaches the center
+//         end: '+=100%', // End point of the animation
+//         scrub: true, // Allow smooth scroll scrubbing
+//         markers: true, // Set to true for debugging
+//       }
+//     });
+
+//     tl
+//       .to(whydiv, {
+//         opacity: 1, // Fade in
+//         y: -0, // Move to its original position
+//         duration: 1,
+//         ease: 'power2.out'
+//       })
+//       .set(whydiv, { zIndex: 3 - index }) // Adjust the z-index as we scroll
+//       .to(whydiv, {
+//         opacity: 0.7, // Reduce opacity slightly for inactive sections
+//         duration: 1,
+//         y: -100,
+//       }, "+=0.5");
+//   });
+// }
+if (!isMobile()) {
+  const sections = document.querySelectorAll('.whydiv'); // Select all sections
+const sec = document.querySelectorAll('.why')
+sections.forEach((section, index) => {
+  let moveUpValue; 
+  let zIndexValue = index + 1;
+  // First div stays in its original position, second and third move up higher
+  if (index === 0) {
+    moveUpValue = 0;  // First div doesn't move
+    opacity = 0.3
+  } else if (index === 1) {
+    moveUpValue = -500;  // Second div moves up by 100px
+    opacity = 0.7
+  } else if (index === 2)  {
+    moveUpValue = -1000;  // Third div moves up by 200px
+    // opacity = 1
+  }
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top 90%", // Start when top of section hits 80% of viewport
+      end: "top 70%",   // End when top of section hits 20% of viewport
+      scrub: true, 
+      pin: true,     // Smooth scrubbing
+      pinSpacing: false,
+      markers: false,   // Enable for debugging if needed
+      toggleActions: 'play none none none' // Play forward and reverse on scroll
+    }
+  });
+
+  // Animation: fade in and move slightly upward
+  tl.fromTo(section, 
+    { opacity: 0, y: 100, zIndex: zIndexValue }, // Start off-screen (lower)
+    { opacity: 1, y: moveUpValue, zIndex: zIndexValue, duration: 5 } // Fade in and move up
+  ).to(section, 
+    { opacity: 1, duration: 5 }, "+=0.5"); // Fade out slowly after appearing
 });
+}
+})
 
 
 
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
+const cancel = document.getElementById('cancel');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   menu.classList.toggle('active');
-  console.log('jhh')
+  cancel.classList.toggle('active');
 });
 
-// why pollity section
-// const whyDiv = document.querySelector('.whydiv1');
-// const whyDiv2 = document.querySelector('.whydiv2');
-// const whyDiv3 = document.querySelector('.whydiv3');
-
-// whyDiv.addEventListener('click', () => {
-//   whyDiv2.classList.toggle('show');
-//   // whyDiv3.classList.toggle('show');
-//   console.log('he;o')
-// });
-// whyDiv2.addEventListener('click', () => {
-//   whyDiv3.classList.toggle('show');
-//   // whyDiv3.classList.toggle('show');
-//   console.log('he;o')
-// });
-
-const whyDiv1 = document.querySelector('.whydiv');
-const whyDiv2 = document.querySelector('.whydiv2');
-const whyDiv3 = document.querySelector('.whydiv3');
-
-let clicked = 0; // Counter to track how many clicks
-
-whyDiv1.addEventListener('click', () => {
-  if (clicked === 0) {
-    whyDiv2.classList.add('show');
-    whyDiv1.style.zIndex = 2;  // Lower the z-index of the first card
-    whyDiv2.style.zIndex = 3;  // Stack the second card below
-  } else if (clicked === 1) {
-    whyDiv3.classList.add('show');
-    whyDiv2.style.zIndex = 2;  // Lower the z-index of the second card
-    whyDiv3.style.zIndex = 3;  // Stack the third card below
-  }
-  clicked++;
+cancel.addEventListener('click', () => {
+  // Hide the sidebar and show hamburger again
+  hamburger.classList.remove('active');
+  menu.classList.remove('active');
+  cancel.classList.remove('active');
 });
+
+
+
 
 function toggleFAQ(element) {
   const answer = element.nextElementSibling;
@@ -121,85 +163,42 @@ function toggleFAQ(element) {
   }
 }
 
-// const cards = document.querySelectorAll('.info-card');
-// const prevButton = document.getElementById('prev');
-// const nextButton = document.getElementById('next');
-// let currentCard = 0;
 
-// function updateCards() {
-//     cards.forEach((card, index) => {
-//         card.classList.remove('active');
-//         if (index === currentCard) {
-//             card.classList.add('active');
-//         }
-//     });
-// }
-
-// nextButton.addEventListener('click', () => {
-//     currentCard = (currentCard + 1) % cards.length;
-//     updateCards();
-// });
-
-// prevButton.addEventListener('click', () => {
-//     currentCard = (currentCard - 1 + cards.length) % cards.length;
-//     updateCards();
-// });
-
-// updateCards(); // Initialize with the first card active
-
-// const nextBtn = document.getElementById('next');
-// const prevBtn = document.getElementById('prev');
-// const card1 = document.getElementById('card-1');
-// const card2 = document.getElementById('card-2');
-
-// nextBtn.addEventListener('click', () => {
-//     card1.style.transform = 'translateX(-120%)';
-//     card2.style.transform = 'translateX(0)';
-//     card1.style.opacity = '0.5';
-//     card2.style.opacity = '1';
-// });
-
-// prevBtn.addEventListener('click', () => {
-//     card1.style.transform = 'translateX(0)';
-//     card2.style.transform = 'translateX(120%)';
-//     card1.style.opacity = '1';
-//     card2.style.opacity = '0.5';
-// });
-const nextBtn = document.getElementById('next');
-const prevBtn = document.getElementById('prev');
-const card1 = document.getElementById('card-1');
-const card2 = document.getElementById('card-2');
-
-let isCard1Active = true; // Track which card is active
-
-function updateCards() {
-    if (isCard1Active) {
-        card1.style.transform = 'translateX(0)';
-        card1.style.opacity = '1';
-        card2.style.transform = 'translateX(120%)';
-        card2.style.opacity = '0.5';
-        card2.style.display = 'none'
-    } else {
-        card1.style.transform = 'translateX(-120%)';
-        card1.style.opacity = '0.5';
-        card2.style.transform = 'translateX(0)';
-        card2.style.opacity = '1';
-        // card1.style.display ='none'
-    }
+function isMobile() {
+  return window.innerWidth < 768; // Adjust based on mobile breakpoint
 }
+if (!isMobile()) {
+const cards = document.querySelectorAll('.infocard');
+let currentCard = 0; // Start with the first card
 
-nextBtn.addEventListener('click', () => {
-    isCard1Active = !isCard1Active;
-    updateCards();
+// Function to update card visibility
+function updateCardVisibility() {
+    cards.forEach((card, index) => {
+        if (index === currentCard) {
+            card.classList.add('active'); // Show the active card
+        } else {
+            card.classList.remove('active'); // Hide non-active cards
+        }
+    });
+}
+// if (!isMobile()) {
+// Initialize the first card as active
+updateCardVisibility();
+
+// Event listener for the "Next" button
+document.getElementById('next').addEventListener('click', () => {
+    // Move to the next card, loop back to the first card if at the end
+    currentCard = (currentCard + 1) % cards.length;
+    updateCardVisibility(); // Update visibility
 });
 
-prevBtn.addEventListener('click', () => {
-    isCard1Active = !isCard1Active;
-    updateCards();
+// Event listener for the "Prev" button
+document.getElementById('prev').addEventListener('click', () => {
+    // Move to the previous card, loop back to the last card if at the beginning
+    currentCard = (currentCard - 1 + cards.length) % cards.length;
+    updateCardVisibility(); // Update visibility
 });
-
-
-
+}
 
   
 

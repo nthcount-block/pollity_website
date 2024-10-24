@@ -4,6 +4,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Satoshi', sans-serif;;
+    overflow-x: hidden;
   }
 
   h1 {
@@ -37,7 +38,11 @@ body, html {
     overflow: hidden;
     height: 90px;
   }
-  
+  .hamburger-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -77,13 +82,25 @@ body, html {
   .cta-button:hover {
     background-color: #228B22;
   }
-
+  .cancel-button {
+    display: none;
+    color: black;
+    border: none;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    font-size: 2rem;
+  }
   .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
   }
-  
+  .hamburger img {
+    width: 40px;
+  }
+
   .hamburger span {
     width: 25px;
     height: 3px;
@@ -148,6 +165,13 @@ body, html {
     font-weight: normal;
     width: 50%;
 }
+.adminslidercontainer {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+}
 .adminsliderflex {
     background-color: #F5F5F5;
     display: flex;
@@ -156,14 +180,22 @@ body, html {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    border-radius: 24px;
+    flex-shrink: 0;
+    transition: transform 0.5s ease;
+    border-radius: 48px;
+    /* margin: 0 10px; */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .adminsliderflex > img {
-    width: 50%;
+    /* width: 50%; */
     height: 500px;
-    object-fit: contain;
+    object-fit: cover;
     padding: 20px 0px;
     /* border: 2px solid black; */
+    min-width: 200px;
+    margin-right: 20px;
+    border-radius: 32px;
 }
 .adminsliderflex  h1 {
  color: #46B97D;
@@ -182,6 +214,7 @@ body, html {
 }
 
 /* admins why */
+
 .adminswhy h1 {
     margin-bottom: 50px;
 }
@@ -218,7 +251,7 @@ body, html {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 90vw;
+    width: 80%;
     /* max-width: 1200px; */
     background-color: #91FDC5;
     margin: 50px auto;
@@ -242,13 +275,16 @@ body, html {
   .votercontainer1 p {
     text-align: center;
     color: #004B52;
+    max-width: 60%;
+  margin: 20px auto;
     /* padding-bottom: 100px; */
   }
   .votercontainer1 button {
     padding: 10px 15px;
     border-radius: 24px;
     margin-bottom: 100px;
-    border: none;
+    border: 1px solid #D0D5DD;
+  font-size: larger;
   }
   /* Faq styles */
 .faq-container {
@@ -302,6 +338,7 @@ body, html {
     cursor: pointer;
     font-size: 1.1rem;
     padding: 15px 0;
+ 
   }
   
   .faq-question .icon {
@@ -365,84 +402,97 @@ body, html {
       }
       .navbar {
         position: relative;
+        padding: 0px 20px;
       }
       .nav-links {
         display: none;
         flex-direction: column;
-        /* position: absolute; */
-        top: 60px;
-        right: 0;
-        background-color: #333;
-        /* width: 100%; */
-        /* height: 100vh; */
-        text-align: right;
-        padding: 20px;
-        color: white;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 60%;
+        background-color: white;
+        transition: right 0.3s ease-in-out;
+        padding-top: 60px;
+        align-items: flex-start;
+        text-align: left;
       }
-    
+      .nav-links.active {
+        right: 0;
+      }
       .nav-links li {
         margin: 20px 0;
         color: white;
       }
-    /*   
-      .cta-button {
-        margin-top: 20px;
-        display: hidden;
-      } */
+    
       #btn {
         display: none;
       }
     
       .hamburger {
-        display: flex;
+        display: block;
+      }
+      .hamburger-container .cancel-button.active {
+        display: block;
       }
     
+      .hamburger-container .hamburger.active {
+        display: none;
+      }
       /* Toggle the menu */
       .menu.active {
         display: flex;
       }
     
-      /* Hamburger icon animation */
-      .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-    
-      .hamburger.active span:nth-child(2) {
-        opacity: 0;
-      }
-    
-      .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-      }
+      
 
       .admin-hero {
-        max-width: 90vw;
+        max-width: 70vw;
         /* background-color: red; */
       }
       .admin-hero h1 {
-        max-width: 90vw;
+        min-width: 100vw;
+       
         
       }
       .admin-hero p {
         min-width: 80vw;
+        font-size: larger;
      
       }
+      .admin-hero button {
+        font-size: larger;
+      }
       .admin-hero img {
-        min-width: 100%;
+        min-width: 90vw;
       }
       /* slider */
       .adminslider h1 {
-        min-width: 90%;
+        min-width: 70vw;
+      }
+      .adminslidercontainer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
       }
       .adminsliderflex {
         flex-direction: column;
+        align-items: center;
+      justify-content: center;
+      gap: 2px;
+      width: 90%;
+      padding: 0px 5px;
+      border-radius: 16px;
       }
       .adminsliderflex > img {
         width: 100%;
-        /* padding: 0; */
+        margin: 10px auto;
+      border-radius: 8px;
+        padding: 0;
       }
       .adminslidercontent {
-        width: 90%;
+        width: 80%;
       }
 
       /* admins why */
@@ -454,22 +504,32 @@ body, html {
         width: 95vw;
       }
 /* ready */
+.votercontainer1 {
+  width: 70vw;
+}
       .votercontainer1 h1 {
         font-size: 3rem;
         min-width: 80vw;
         text-align: center;
         /* background-color: red; */
+        margin: auto;
       }
       .votercontainer1 p {
         max-width: 90%;
         margin: 10px auto 50px;
+      }
+      .votercontainer1 button {
+        font-size: larger;
       }
 
     /* faqs */
     .faq-container {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      width: 80vw;
+    }
+    .faq-item {
+      width: 80%;
     }
     .faq-left {
       max-width: 80vw;

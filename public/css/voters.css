@@ -6,6 +6,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Satoshi', sans-serif;;
+    overflow-x: hidden;
   }
 
   h1 {
@@ -39,7 +40,11 @@ body, html {
     overflow: hidden;
     height: 90px;
   }
-  
+  .hamburger-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -80,11 +85,26 @@ body, html {
     background-color: #228B22;
   }
   /* Navbar responsive styles */
+  .cancel-button {
+    display: none;
+    color: black;
+    border: none;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    font-size: 2rem;
+  }
   
+
   .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    width: 50px;
+  }
+  .hamburger img {
+    width: 40px;
   }
   
   .hamburger span {
@@ -196,41 +216,77 @@ body, html {
 /* slider styles */
 .slider {
     padding: 100px 0;
+    text-align: center;
 }
-.slider > h1 {
+ .slider > h1 {
     /* font-size: 3rem; */
     color: #004B52;
-    /* text-align: center; */
+    text-align: center;
     font-weight: normal;
-    width: 50%;
+    /* width: 50%; */
+    position: relative;
+    margin-bottom: 30px;
+} 
+.slidercontainer {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+  /* max-width: 1200px; */
+
 }
+
 .sliderflex {
-    background-color: #F5F5F5;
-    display: flex;
-    width: 80%;
-    margin: auto;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 24px;
-    padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 80%;
+  transition: transform 0.5s ease;
+  background-color: #F5F5F5;
+  border-radius: 48px;
+  margin: 0 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 .sliderflex > img {
-    width: 50%;
+    /* width: 200px; */
     height: 500px;
-    object-fit: contain;
+    object-fit: cover;
     padding: 20px 0px;
+    /* flex: 2; */
     /* border: 2px solid black; */
+    /* width: 100%; */
+    min-width: 200px;
+    margin-right: 20px;
+    border-radius: 32px;
 }
 .sliderflex  h1 {
  color: #46B97D;
  font-size: 3rem;
  font-weight: normal;
+ /* width: 50%; */
 
 }
 .slidercontent {
-    width: 50%;
+    /* max-width: 50vw; */
+    flex: 2;
+    min-width: 50%;
+    /* background-color: red; */
+    /* overflow: hidden; */
+    text-align: left;
 }
+.mobile-image {
+  display: none;
+}
+
+.desktop-image {
+  display: block;
+  max-width: 50%; /* Adjust as needed */
+}
+
 
 /* voter how blockvote style */
 .votercontainer {
@@ -334,6 +390,9 @@ body, html {
   .votercontainer1 p {
     text-align: center;
     color: #004B52;
+    font-size: larger;
+    max-width: 60%;
+    margin: 20px auto;
     /* padding-bottom: 100px; */
   }
   .votercontainer1 button {
@@ -341,6 +400,8 @@ body, html {
     border-radius: 24px;
     margin-bottom: 100px;
     border: none;
+    border: 1px solid #D0D5DD;
+  font-size: larger;
   }
 
   /* Faq styles */
@@ -458,36 +519,43 @@ body, html {
   }
   .navbar {
     position: relative;
+    padding: 0px 20px;
   }
   .nav-links {
     display: none;
     flex-direction: column;
-    /* position: absolute; */
-    top: 60px;
-    right: 0;
-    background-color: #333;
-    /* width: 100%; */
-    /* height: 100vh; */
-    text-align: right;
-    padding: 20px;
-    color: white;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 60%;
+    background-color: white;
+    transition: right 0.3s ease-in-out;
+    padding-top: 60px;
+    align-items: flex-start;
+    text-align: left;
   }
-
+  .nav-links.active {
+    right: 0;
+  }
   .nav-links li {
     margin: 20px 0;
     color: white;
   }
-/*   
-  .cta-button {
-    margin-top: 20px;
-    display: hidden;
-  } */
+
   #btn {
     display: none;
   }
 
   .hamburger {
-    display: flex;
+    display: block;
+  }
+  .hamburger-container .cancel-button.active {
+    display: block;
+  }
+
+  .hamburger-container .hamburger.active {
+    display: none;
   }
 
   /* Toggle the menu */
@@ -495,18 +563,6 @@ body, html {
     display: flex;
   }
 
-  /* Hamburger icon animation */
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
 
     /* voter hero responsive */
     .voter-hero {
@@ -553,7 +609,10 @@ body, html {
     .faq-container {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      width: 80vw;
+    }
+    .faq-item {
+      width: 80%;
     }
     .faq-left {
       max-width: 80vw;
@@ -587,18 +646,24 @@ body, html {
     }
     .sliderflex {
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: 2px;
       width: 90%;
-      padding: 0;
+      padding: 0px 5px;
+      border-radius: 16px;
+      /* background-color: red; */
     }
     .sliderflex > img {
       width: 100%;
-      height: auto;
+      /* height: auto; */
       /* background-color: red; */
       padding: 0;
+      margin: 10px auto;
+      border-radius: 8px;
     }
     .sliderflex h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
     .sliderflex p {
       font-size: 1rem;
@@ -608,15 +673,26 @@ body, html {
     .slidercontent {
       width: 80%;
     }
+    .desktop-image {
+      display: none;
+    }
+  
+    .mobile-image {
+      display: block;
+      max-width: 100%; /* Full width for mobile */
+    }
+
 
     /* voter how */
     .votercontainer {
       flex-direction: column;
+      max-width: 80vw;
+      
     }
     .voterleft-section h1 {
       font-size: 2.5rem;
       text-align: left;
-      min-width: 70vw;
+      min-width: 90vw;
     }
     .voterright-section {
       display: flex;
@@ -639,6 +715,9 @@ body, html {
     .votercontainer1 p {
       max-width: 80%;
       margin: 10px auto 50px;
+    }
+    .votercontainer1 button {
+      font-size: larger;
     }
 
     /* footer */

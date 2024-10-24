@@ -24,8 +24,11 @@
           <img src="images/Logo.svg" alt="Logo" srcset="" /><span>Pollity</span>
         </a>
       </div>
-      <div class="hamburger" id="hamburger">
-        <img src="images/menu.svg" alt="" srcset="">
+      <div class="hamburger-container">
+        <div class="hamburger" id="hamburger">
+          <img src="images/menu.svg" alt="menu icon" />
+        </div>
+        <p class="cancel-button" id="cancel">X</p>
       </div>
       <ul class="nav-links menu" id="menu">
         <li><a href="voters">Voters</a></li>
@@ -61,7 +64,7 @@
     <!-- Why Blockvote section -->
      <section  class="why">
       <h1 class="h1">Why Pollity</h1>
-      <div class="whydiv whydiv1">
+      <div class="whydiv">
         <img src="images/Image5.png" alt="woman" class="whyimage desktop-image" />
         <img src="images/smileygirlmobile.png" alt="woman" class="whyimage mobile-image" />
         <div class="whytext">
@@ -75,31 +78,23 @@
           </p>
         </div>
       </div>
-      <div class="whydiv whydiv2">
-        <img src="images/Image5.png" alt="woman" class="whyimage desktop-image" />
-        <img src="images/smileygirlmobile.png" alt="woman" class="whyimage mobile-image" />
+      <div class="whydiv">
+        <img src="images/man.png" alt="woman" class="whyimage desktop-image" />
+        <img src="images/mobileguy.png" alt="woman" class="whyimage mobile-image" />
         <div class="whytext">
-          <h1 class="h1">Cut Costssss, Not Corners</h1 class="h1">
+          <h1 class="h1">Fortress-Level Security</h1 class="h1">
           <p>
-            Traditional voting systems can be expensive and slow to update. With
-            BlockVote, you eliminate the high costs of paper ballots, manual
-            processes, and outdated equipment. Our system automates and
-            digitizes the entire voting process, which saves time and
-            significantly reduces costs, while still delivering high-quality
+            Pollity uses blockchain technology to ensure that every vote is safely locked in a digital vault. Each vote is encrypted, which means it’s converted into a secret code, so no one can tamper with or change it. The system creates a permanent, unchangeable record of the vote, making it fully transparent and verifiable
           </p>
         </div>
       </div>
-      <div class="whydiv whydiv3">
-        <img src="images/Image5.png" alt="woman" class="whyimage desktop-image" />
-        <img src="images/smileygirlmobile.png" alt="woman" class="whyimage mobile-image" />
+      <div class="whydiv">
+        <img src="images/mobileman.png" alt="woman" class="whyimage desktop-image" />
+        <img src="images/mobileman.png" alt="woman" class="whyimage mobile-image" />
         <div class="whytext">
-          <h1 class="h1">Cut Costs, Not Cornerssss</h1 class="h1">
+          <h1 class="h1">Efficient from Start to Finish</h1 class="h1">
           <p>
-            Traditional voting systems can be expensive and slow to update. With
-            BlockVote, you eliminate the high costs of paper ballots, manual
-            processes, and outdated equipment. Our system automates and
-            digitizes the entire voting process, which saves time and
-            significantly reduces costs, while still delivering high-quality
+            Managing elections, whether big or small, can be complicated and time-consuming. Pollity simplifies everything with a user-friendly design that guides election officials and voters step by step. From voter registration to counting votes, Pollity speeds up each part of the process while ensuring accuracy.
           </p>
         </div>
       </div>
@@ -170,51 +165,7 @@
       </div>
   </div>
   </section>
-  <!-- <section class="sltnsection">
-    <div class="solution-container">
-      <div class="solution-left">
-          <h1 class="h1">Tailored Solutions<br>for Every Role</h1>
-          <p>BlockVote adapts to the needs of everyone involved in the election process</p>
-          <div class="solution-arrows">
-              <button id="prev" class="arrow-btn left-arrow">←</button>
-              <button id="next" class="arrow-btn right-arrow">→</button>
-          </div>
-      </div>
-      <div class="solution-right">
-          <div class="card-slider">
-              <div class="info-card active" id="card-1">
-                  <img src="../images/Avatar1.png" alt="Voter 1">
-                  <div>
-
-                    <h3>Voters</h3>
-                    <p>Cast your vote quickly and securely with a user-friendly interface designed for simplicity.</p>
-                    <a href="#">Learn More →</a>
-                  </div>
-              </div>
-              <div class="info-card" id="card-2">
-                  <img src="../images/image6.png" alt="Polling Unit Worker">
-                  <div>
-                    
-                    <h3>Polling Unit Workers</h3>
-                    <p>Manage voter accreditation and security with tools that are easy to use.</p>
-                    <a href="#">Learn More →</a>
-                  </div>
-              </div>
-              <!-- Add more cards as needed -->
-          <!-- </div>
-      </div>
-  </div>
-
-  <div class="container1">
-    <img src="../images/Group2.png" alt="" srcset="" class="group2img">
-        <h1 class="h1">Ready to Elevate Your Elections?</h1>
-    
-    <div class="">
-        <p>See how BlockVote can transform your electoral process with security, transparency, and efficiency.</p>
-    </div>
-    <button>Schedule a consultation</button>
-</div>
-  </section>  -->
+  
   <section class="sltnsection">
     <div class="section-container">
       <div class="text-content">
@@ -231,14 +182,14 @@
               <img src="images/Avatar1.png" alt="Voter" />
               <h3>Voters</h3>
               <p>Cast your vote quickly and securely with a user-friendly interface designed for simplicity.</p>
-              <a href="#" class="learn-more">Learn More →</a>
+              <a href="./voters" class="learn-more">Learn More →</a>
           </div>
   
-          <div class="infocard" id="card-2">
+          <div class="infocard active" id="card-2">
               <img src="images/image6.png" alt="Polling Officer" />
               <h3>Polling Unit Officers</h3>
               <p>Manage voter accreditation and security with easy-to-use tools.</p>
-              <a href="#" class="learn-more">Learn More →</a>
+              <a href="./admins" class="learn-more">Learn More →</a>
           </div>
       </div>
      
