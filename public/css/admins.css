@@ -15,7 +15,7 @@ body, html {
     color: #262626;
   }
   .h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: lighter;
     margin: 40px auto 20px;
     text-align: center;
@@ -138,6 +138,7 @@ body, html {
     width: 50%;
     margin: auto;
     padding-bottom: 50px;
+    font-size: 18px;
   }
   .admin-hero button {
     padding: 12px 20px;

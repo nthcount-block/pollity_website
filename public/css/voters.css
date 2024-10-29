@@ -17,7 +17,7 @@ body, html {
     color: #262626;
   }
   .h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: lighter;
     margin: 40px auto 20px;
     text-align: center;
@@ -119,6 +119,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     padding: 50px;
+    padding-left: 100px;
     align-items: center;
     /* max-width: 1200px; */
     gap: 100px;
@@ -130,7 +131,7 @@ body, html {
 }
 
 .voter-content {
-    max-width: 55%;
+    max-width: 50%;
     flex: 2 ;
     /* border: 2px solid black; */
 }
@@ -139,6 +140,7 @@ body, html {
     text-align: left;
      line-height: 1.2;
     color: #004B52;
+    margin-bottom: 40px;
     
 } 
 
@@ -195,21 +197,37 @@ body, html {
 /* at blockvote styles */
 .atblockvote {
     background-color: #91FDC5;
-    text-align: center;
+    /* text-align: center; */
     color: lightgreen;
-    padding: 3rem 0;
+    /* padding: 3rem 0; */
+    min-height: 90vh ;
+    
+    
+}
+.atflex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 60vh; */
+  /* background-color: red; */
+}
+.atflex1 {
+  /* background-color: rebeccapurple; */
 }
 .atblockvote.change-color {
   color: #004B52; /* Color when changed */
 }
 .atblockvote p {
     font-weight: bolder;
+    text-align: center;
 }
 .atblockvote h1 {
     width: 65%;
     margin: auto;
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: normal;
+    text-align: center;
     /* opacity: 0; */
     /* text-align: justify; */
 }
@@ -293,11 +311,11 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90vw;
+    width: 70vw;
     /* max-width: 1200px; */
     background-color: #91FDC5;
     margin: 50px auto;
-    padding: 50px;
+    padding: 50px 120px 50px;
     border-radius: 24px;
     gap: 20px;
   }
