@@ -451,6 +451,7 @@ body, html {
 
       .admin-hero {
         max-width: 70vw;
+        margin: 0px auto;
         /* background-color: red; */
       }
       .admin-hero h1 {
@@ -471,7 +472,7 @@ body, html {
       }
       /* slider */
       .adminslider h1 {
-        min-width: 70vw;
+        min-width: 90vw;
       }
       .adminslidercontainer {
         display: flex;
@@ -495,6 +496,14 @@ body, html {
       }
       .adminslidercontent {
         width: 80%;
+      }
+      .adminslidercontent h1 {
+        font-size: 32px;
+        min-width: 70%;
+      }
+      .adminslidercontent > div > p {
+        /* background-color: red; */
+        min-width: 100%;
       }
 
       /* admins why */

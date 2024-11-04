@@ -606,7 +606,7 @@ body, html {
     }
     .voter-content h1 {
       font-size: 2.5rem;
-      min-width: 80vw;
+      min-width: 90vw;
       text-align: center;
       /* background-color: red; */
     }
