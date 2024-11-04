@@ -587,8 +587,8 @@ body, html {
     /* voter hero responsive */
     .voter-hero {
         flex-direction: column;
-        /* align-items: center; */
-        /* justify-content: center; */
+        align-items: center;
+        justify-content: center;
         padding: 0;
 
     }
@@ -605,13 +605,13 @@ body, html {
       align-items: center;
     }
     .voter-content h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       min-width: 80vw;
       text-align: center;
       /* background-color: red; */
     }
     .voter-btn {
-      margin: auto;
+      margin: 0px auto;
       display: block;
     }
 
