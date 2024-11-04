@@ -32,35 +32,30 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (!isMobile()) {
-gsap.to(".adminsliderflex", {
-  xPercent: -100 * 2, // Move slider by 100%
-  ease: "none",
-  duration: 10,   // Duration of the entire loop
-  repeat: -1,     // Infinite repeat
-  // repeatDelay: 0,
-  modifiers: {
-      xPercent: gsap.utils.wrap(-100 * 3, 0) // Wrap slider
-  },
-  stagger: {
-      each: 2,
-      // repeat: -1
-  }
-});
-  gsap.utils.toArray(".adminsliderflex").forEach((slider) => {
-    gsap.fromTo(slider, 
-      { scale: 0.8 }, // Initial scale when off-screen
-      {
-        scale: 1, // Scale up when in view
-        scrollTrigger: {
-          trigger: slider, // Trigger the scale-up when the slide enters the viewport
-          start: "center center", // Start scaling when the slide is centered
-          toggleActions: "play none none reverse" // Scale up, but scale down when off-screen
-        },
-        duration: 0.5, // Animation duration for scaling
-        ease: "power1.out"
-      }
-    );
-  });
+    const sliderContainer = document.querySelector('.adminslidercontainer');
+    const slides = document.querySelectorAll('.adminsliderflex');
+    let currentIndex = 0;
+    
+    function showSlide(index) {
+      const offset = -index * 100; // Calculate the offset for the current slide
+      slides.forEach((slide) => {
+        slide.style.transform = `translateX(${offset}%)`;
+      });
+    }
+    
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length; // Move to next slide, loop back to start
+      showSlide(currentIndex);
+    }
+    
+    function previousSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length; // Move to previous slide, loop to end
+      showSlide(currentIndex);
+    }
+    
+    // Auto slide every 3 seconds
+    setInterval(nextSlide, 3000); // Adjust time as needed
+    
 
 }
 
