@@ -146,7 +146,7 @@ body, html {
 
 .voter-btn {
     padding: 15px 30px;
-    background-color: #00b956;
+    background-color: #46B97D;
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -239,7 +239,7 @@ body, html {
     text-align: center;
 }
  .slider > h1 {
-    /* font-size: 3rem; */
+    font-size: 4rem;
     color: #004B52;
     text-align: center;
     font-weight: normal;
@@ -260,28 +260,21 @@ body, html {
 .sliderflex {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   flex-shrink: 0;
   width: 80%;
   transition: transform 0.5s ease;
   background-color: #F5F5F5;
   border-radius: 48px;
   margin: 0 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  gap: 5rem;
 
 }
 .sliderflex > img {
-    /* width: 200px; */
-    height: 500px;
     object-fit: cover;
-    padding: 20px 0px;
-    /* flex: 2; */
-    /* border: 2px solid black; */
-    /* width: 100%; */
-    min-width: 200px;
-    margin-right: 20px;
-    border-radius: 32px;
+    width: 40%;
+    border-radius: 24px;
 }
 .sliderflex  h1 {
  color: #46B97D;
@@ -293,7 +286,7 @@ body, html {
 .slidercontent {
     /* max-width: 50vw; */
     flex: 2;
-    min-width: 50%;
+    max-width: 40%;
     /* background-color: red; */
     /* overflow: hidden; */
     text-align: left;
@@ -310,25 +303,30 @@ body, html {
 
 /* voter how blockvote style */
 .votercontainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 70vw;
-    /* max-width: 1200px; */
-    background-color: #91FDC5;
-    margin: 50px auto;
-    padding: 50px 120px 50px;
-    border-radius: 24px;
-    gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* max-width: 70vw; */
+  /* max-width: 1200px; */
+  background-color: #91FDC5;
+  margin: 50px auto;
+  border-radius: 24px;
+  position: relative;
+  padding: 50px 150px 50px;
+  transform-origin: center;
+  transition: transform 0.5s ease;
   }
   
   
   .voterleft-section {
     flex: 1.2;
+    transform: translateX(-100%);
+  opacity: 0;
   }
   
   .voterleft-section h1 {
     text-align: left;
+    font-size: 4.5rem;
   }
   
   .voterright-section {
@@ -336,6 +334,8 @@ body, html {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
+    transform: translateX(100%);
+  opacity: 0;
     /* gap: 20px; */
   }
   
@@ -429,6 +429,7 @@ body, html {
     display: flex;
     padding: 50px;
     justify-content: space-around;
+    /* background-color: #004B52; */
   }
   
   .faq-left {
@@ -590,6 +591,7 @@ body, html {
         align-items: center;
         justify-content: center;
         padding: 0;
+        min-height: 80vh;
 
     }
 
@@ -620,6 +622,10 @@ body, html {
     }
 
    /* at blockvote */
+   .atblockvote {
+    min-height: 70vh;
+    margin-bottom: 100px;
+   }
    .atblockvote h1 {
     font-size: 2rem;
     width: 80%;
@@ -666,13 +672,14 @@ body, html {
     }
     .sliderflex {
       flex-direction: column;
-      align-items: center;
+        align-items: center;
       justify-content: center;
       gap: 2px;
-      width: 90%;
+      min-width: 90vw;
       padding: 0px 5px;
       border-radius: 16px;
-      /* background-color: red; */
+      margin: auto;
+      padding-bottom: 20px;
     }
     .sliderflex > img {
       width: 100%;
@@ -682,17 +689,17 @@ body, html {
       margin: 10px auto;
       border-radius: 8px;
     }
-    .sliderflex h1 {
-      font-size: 2rem;
-    }
-    .sliderflex p {
-      font-size: 1rem;
-      letter-spacing: 1px;
-      padding-bottom: 20px;
-    }
     .slidercontent {
-      width: 80%;
+      min-width: 80%;
+      margin: auto;
+      /* background-color: #008f48; */
     }
+
+    .slidercontent h1 {
+      font-size: 32px;
+   
+    }
+  
     .desktop-image {
       display: none;
     }

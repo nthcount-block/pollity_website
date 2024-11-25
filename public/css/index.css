@@ -4,6 +4,7 @@ body, html {
     padding: 0;
     font-family: 'Satoshi', sans-serif;;
     overflow-x: hidden;
+    /* z-index: 50; */
   }
 
   h1 {
@@ -129,7 +130,7 @@ body, html {
   }
   
   .hero-content {
-    animation: zoom-in 1s ease-out forwards;
+    animation: zoom-in 0.3s ease-out forwards;
     opacity: 0;
   
   }
@@ -181,7 +182,7 @@ body, html {
     position: absolute;
     top: 100px;
     left: 200px;
-    animation: slide-in-left 1.5s ease-out forwards;
+    animation: slide-in-left 0.5s ease-out forwards;
 
   }
   
@@ -189,20 +190,20 @@ body, html {
     position: absolute;
     top: 200px;
     right: 200px;
-    animation: slide-in-right 1.5s ease-out forwards;
+    animation: slide-in-right 0.5s ease-out forwards;
 
   }
   
   .img-bottom-left {
     bottom: 100px;
     left: 200px;
-    animation: slide-in-left 1.8s ease-out forwards;
+    animation: slide-in-left 0.5s ease-out forwards;
   }
   
   .img-bottom-right {
     bottom: 50px;
     right: 200px;
-    animation: slide-in-right 1.8s ease-out forwards;
+    animation: slide-in-right 0.5s ease-out forwards;
   }
 /* Why section styles */
   .h1 {
@@ -217,15 +218,18 @@ body, html {
     position: relative;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
+    max-height: 130vh;
+    /* background-color: #001C1F; */
+    min-width: 100vw;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 100px;
     /* overflow: hidden; */
-    height: auto;
-    /* padding: 100px 0; */
+  
   }
   .why h1 {
-    position: relative; /* Position it normally within the flow */
-    z-index: 5; /* Ensure it stays above the sliding cards */
+    position: relative; 
+    z-index: 5;    
    margin-bottom: 2rem;
   
   }
@@ -235,45 +239,31 @@ body, html {
   /* Base styling for whydivs */
 .whydiv {
   background-color: #001C1F;
-  position: absolute;
-  height: 80vh;
+  position: relative;
+  height: 90vh;
   width: 85vw;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, 0); /* Start from below */
+  top: 30%;
+  /* left: 50%; */   
+  transform: translateY(200px) scale(1); /* Start from below */
   border-radius: 48px;
   display: flex;
-  gap: 3rem;
+  gap: 5rem;
   transition: transform 0.8s ease, opacity 0.8s ease;
-  opacity: 0; /* Initially hidden */
-  transition-delay: 0s;
+  /* opacity: 0; Initially hidden */
+  /* transition-delay: 1s; */
+  padding-left: 2rem;
+  padding-right: 2rem;
+  z-index: 1;
+  /* overflow: hidden; */
 }
-
-/* Show class for the visible div */
-.whydiv.show {
-  transform: translate(-50%, 0) scale(1);
+.whydiv.visible {
+  opacity: 1; /* Fully visible */
+  /* transform: translateY(0); Slide to the original position */
+}
+.whydiv.in-view {
   opacity: 1;
-  z-index: 3;
 }
 
-/* Faded effect for previous divs */
-.whydiv.faded {
-  opacity: 0.3; /* Reduce opacity */
-  z-index: 2;
-}
-
-/* Define scale classes */
-.whydiv.scale-0-7 {
-  transform: translate(-50%, 10%) scale(0.7); /* Shrink for older divs */
-}
-
-.whydiv.scale-0-9 {
-  transform: translate(-50%, 30%) scale(0.9); /* Slightly larger for second-most recent */
-}
-
-.whydiv.scale-1 {
-  transform: translate(-50%, 50%) scale(1); /* Full size for current card */
-}
 
 /* Styling for text inside the whydiv */
 .whytext > h1 {
@@ -283,7 +273,7 @@ body, html {
   justify-content: start;
   align-items: start;
   position: relative;
-  z-index: 4;
+  /* z-index: 4; */
 
 }
 
@@ -291,10 +281,11 @@ body, html {
   .whyimage {
     height: auto;
     margin: 30px 0px;
-    padding-left: 2rem;
-    object-fit: contain;
+    /* padding-left: 2rem; */
+    object-fit: cover;
     border-radius: 24px;
-    max-width: 40%;
+    width: 40%;
+    /* overflow: hidden; */
   }
   .mobile-image {
     display: none;
@@ -305,26 +296,17 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    /* background-color: red; */
+    max-width: 50%;
     /* min-width: 100%; */
     /* align-items: center; */
   }
 
-  .whytext > h1 {
-    color: #46B97D;   
-    text-align: left;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    z-index: 4;
-    /* background-color: black; */
-  }
 
   .whytext p {
     color: #BFBFBF;
     font-size: 1.2rem;
     font-weight: lighter;
-    width: 80%;
+    max-width: 80%;
     text-align: left;
     letter-spacing: 1px;
   }
@@ -332,7 +314,7 @@ body, html {
   /* integrity section */
   .integritysection {
     min-height: 100vh;
-    margin-top: 700px;
+    /* margin-top: 700px; */
   }
   .integritydiv {
     position: relative;
@@ -342,10 +324,10 @@ body, html {
     display: flex;
     /* border: 2px solid black; */
     width: 70vw;
-    min-height: 700px;
+    min-height: 700px; 
     /* object-fit: cover; */
     border-radius: 24px;
-    z-index: 50;
+    overflow: hidden;
   }
   .integrityh1 {
     max-width: 50vw;
@@ -365,7 +347,7 @@ body, html {
     position: absolute;
     top: 0;
     left: 120px;
-    z-index: -1;
+    /* z-index: 50; */
     animation: moveZoom 10s infinite;
 
   }
@@ -393,7 +375,7 @@ body, html {
   padding: 100px 0px;
  }
  .section4 h1 {
-  margin-bottom: -20px;
+  margin-bottom: -35px;
   /* background-color: red; */
  }
  .section4 p {
@@ -409,6 +391,7 @@ body, html {
     gap: 40px;
     align-items: center;
     justify-content: center;
+    margin-top: 100px;
 }
 
 .card {
@@ -416,9 +399,12 @@ body, html {
     border-radius: 20px;
     padding: 10px 40px 30px;
     width: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .card h3 {
@@ -435,26 +421,8 @@ body, html {
     width: 70%;
     margin: 0px auto 40px;
 }
-
-.language-list {
-    list-style: none;
-    padding: 0;
-}
-
-.language-list li {
-    padding: 10px 0;
-    background-color: #fff;
-    border-radius: 10px;
-    color: #a9b3b5;
-    font-weight: bold;
-    margin-bottom: 10px;
-    opacity: 0.5;
-}
-
-.language-list li.selected {
-    background-color: #d4e4e2;
-    color: #075e55;
-    opacity: 1;
+.displayimg {
+  width: 400px;
 }
 
 .icons {
@@ -466,9 +434,13 @@ body, html {
   /* gap: 2px; */
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  width: 400px;
 }
-
+.icon {
+  height: 80px;
+  width: 80px;
+}
 
 .icon1 { grid-area: icon1; }
 .icon2 { grid-area: icon2; }
@@ -480,13 +452,15 @@ body, html {
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
-  max-width: 70vw;
+  /* max-width: 70vw; */
   /* max-width: 1200px; */
   background-color: #91FDC5;
   margin: 50px auto;
   border-radius: 24px;
   position: relative;
   padding: 50px 150px 50px;
+  transform-origin: center;
+  transition: transform 0.5s ease;
 }
 
 .group1img {
@@ -497,11 +471,14 @@ body, html {
   bottom: 0;
   left: 0;
   object-fit: contain;
+  /* opacity: 0; */
 }
 
 
 .left-section {
   flex: 1;
+  transform: translateX(-100%);
+  opacity: 0;
 }
 
 .left-section h1 {
@@ -519,6 +496,8 @@ body, html {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 20px;
+  transform: translateX(100%);
+  opacity: 0;
 }
 
 .feature {
@@ -607,6 +586,8 @@ body, html {
   display: flex;
   padding: 50px;
   justify-content: space-around;
+  /* background-color: #001C1F; */
+  /* height: 50vh; */
 }
 
 .faq-left {
@@ -643,7 +624,7 @@ body, html {
 }
 
 .faq-item {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   border-bottom: 1px solid #ddd;
 }
 
@@ -653,11 +634,13 @@ body, html {
   align-items: center;
   cursor: pointer;
   font-size: 1.1rem;
-  padding: 15px 0;
+  /* padding: 15px 0; */
+  /* background-color: red; */
 }
 
 .faq-question .icon {
   font-size: 1.5rem;
+  /* color: #000; */
 }
 
 .faq-answer {
@@ -872,9 +855,7 @@ body, html {
       gap: 10px;
       margin: auto;
       padding-left: 0;
-      /* justify-content: center; */
-      /* align-items: center; */
-      /* background-color: red; */
+      margin-bottom: 1100px;
       
     }
     
@@ -884,55 +865,56 @@ body, html {
     .whydiv {
       display: flex;
       flex-direction: column-reverse;
-      min-width: 90%;
+      max-width: 80%;
       border: #001C1F;
       opacity: 1;
       gap: 20px;
-      margin-left: -180px;
+      /* margin-left: -180px; */
       height: auto;
       border-radius: 16px;
       transition: none;
       transform: none;
-      position: relative;
+      /* position: absolute; */
     }
      
 
-/* Animation styles for desktop */
-
-
-
-
-
     .whyimage {
-      padding: 0 20px 20px;
+      padding-bottom: 20px;
       height: auto;
-      max-width: 100%;
+      /* max-width: 100%; */
     }
     .desktop-image {
       display: none;
     }
     .mobile-image {
       display: block;
-      /* width: 100%;  */
+      width: 100%; 
+      margin: auto;
     }
     .whytext {
-      align-items: center;
+      /* align-items: center; */
+      margin: auto;
+      min-width: 100%;
+      /* background-color: red; */
     }
     .whytext > h1 {
-      justify-content: center;
+      /* justify-content: center; */
       width: 80%;
       font-size: 40px;
     }
     .whytext > p {
       font-size: 16px;
+      min-width: 80vw;
+      /* background-color: rebeccapurple; */
     }
 
     /* integrity */
     .integritysection {
       margin-top: 0px;
+      margin-bottom: -100px;
     }
     .integrityh1 {
-      min-width: 95%;
+      min-width: 90%;
       font-size: 40px;
     }
     .integritydiv {
@@ -951,19 +933,8 @@ body, html {
       width: 250px;
       height: 200px;
       object-fit: cover;
-      /* position: absolute; */
-      /* margin-bottom: 0px; */
-      /* position: absolute; */
-      /* bottom: 0; */
-      /* margin: 0px 50px 0px 100px; */
-      /* border: 2px solid black; */
-      /* margin-left: -1000px; */
-      /* margin: auto; */
-      /* right: 500px; */
       position: relative;
-      /* margin-bottom: -1000px; */
-      /* right: 200px; */
-      /* background-color: transparent; */
+      
       margin: auto auto -50px -90px;
       bottom: 0;
       padding-top: 0;

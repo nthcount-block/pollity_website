@@ -158,9 +158,10 @@ body, html {
 
   .adminslider {
     padding: 100px 0;
+    margin-bottom: 100px;
 }
 .adminslider > h1 {
-    /* font-size: 3rem; */
+    font-size: 4rem;
     color: #004B52;
     /* text-align: center; */
     font-weight: normal;
@@ -175,29 +176,22 @@ body, html {
   gap: 20px;
 }
 .adminsliderflex {
-    background-color: #F5F5F5;
-    display: flex;
-    width: 80%;
-    margin: auto;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    transition: transform 0.5s ease;
-    border-radius: 48px;
-    /* margin: 0 10px; */
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-shrink: 0;
+  width: 80%;
+  transition: transform 0.5s ease;
+  background-color: #F5F5F5;
+  border-radius: 48px;
+  margin: 0 10px;
+  padding: 30px;
+  gap: 5rem;
 }
 .adminsliderflex > img {
-    /* width: 50%; */
-    height: 500px;
-    object-fit: cover;
-    padding: 20px 0px;
-    /* border: 2px solid black; */
-    min-width: 200px;
-    margin-right: 20px;
-    border-radius: 32px;
+  object-fit: cover;
+  width: 40%;
+  border-radius: 24px;
 }
 .adminsliderflex  h1 {
  color: #46B97D;
@@ -218,7 +212,7 @@ body, html {
 /* admins why */
 
 .adminswhy h1 {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 .whyflex {
@@ -455,12 +449,12 @@ body, html {
         /* background-color: red; */
       }
       .admin-hero h1 {
-        min-width: 100vw;
+        min-width: 90vw;
        
         
       }
       .admin-hero p {
-        min-width: 80vw;
+        min-width: 70vw;
         font-size: larger;
      
       }
@@ -473,6 +467,7 @@ body, html {
       /* slider */
       .adminslider h1 {
         min-width: 90vw;
+        font-size: 3rem;
       }
       .adminslidercontainer {
         display: flex;
@@ -484,18 +479,23 @@ body, html {
         align-items: center;
       justify-content: center;
       gap: 2px;
-      width: 90%;
+      min-width: 90vw;
       padding: 0px 5px;
       border-radius: 16px;
+      margin: auto;
+      padding-bottom: 20px;
       }
       .adminsliderflex > img {
         width: 100%;
-        margin: 10px auto;
+      /* height: auto; */
+      /* background-color: red; */
+      padding: 0;
+      margin: 10px auto;
       border-radius: 8px;
-        padding: 0;
       }
       .adminslidercontent {
         width: 80%;
+        /* margin: auto; */
       }
       .adminslidercontent h1 {
         font-size: 32px;
@@ -509,11 +509,16 @@ body, html {
       /* admins why */
       .adminswhy h1 {
         min-width: 90%;
+        margin-top: -40px;
       }
       .whyflex {
         flex-direction: column;
         width: 95vw;
       }
+      .whycontainer {
+        width: 80vw;
+    
+    }
 /* ready */
 .votercontainer1 {
   width: 70vw;

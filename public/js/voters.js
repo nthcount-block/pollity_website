@@ -37,15 +37,15 @@ gsap.from(textSpans, {
         },
         opacity: 0, // Start with invisible text
         y: 50, // Move the text 50px upwards
-        duration: 1, // Duration of fade-in
+        duration: 0.2, // Duration of fade-in
         // stagger: 0.3, // Stagger the animations for each word
         onComplete: function() {
             // Once the fade-in is complete, change the color
             textSpans.forEach((span, index) => {
                 gsap.to(span, {
                     color: "#004B52", // Change to dark green
-                    duration: 1, // Duration of color change
-                    delay: index * 0.3 // Stagger the color change
+                    duration: 0.1, // Duration of color change
+                    delay: index * 0.1 // Stagger the color change
                 });
             });
         }
@@ -79,10 +79,31 @@ function previousSlide() {
 
 // Auto slide every 3 seconds
 setInterval(nextSlide, 3000); // Adjust time as needed
-  
-
 }
 
+
+const timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".votercontainer", // Element that triggers the animation
+    start: "top 80%", // Trigger when top of container is 80% from the top of viewport
+    // end: "top 30%", // Animation ends when top of container reaches 30%
+    scrub: 1.5, // Smoothly animate as you scroll
+  },
+  defaults: { duration: 1, ease: "power3.out" },
+
+});
+
+// Animate the image first
+// timeline.to(".group1img", { opacity: 1, duration: 0.5 });
+// Scale down the container
+timeline.to(".votercontainer", { scale: 0.95, duration: 1.5 });
+
+// Animate the left section coming from the left
+timeline.to(".voterleft-section", { x: 0, opacity: 1 }, "<");
+
+// Animate the right section coming from the right
+timeline.to(".voterright-section", { x: 0, opacity: 1}, "<");
+ 
 
 })
 
@@ -105,29 +126,6 @@ cancel.addEventListener('click', () => {
   cancel.classList.remove('active');
 });
 
-const cards = document.querySelectorAll('.infocard');
-const nextButton = document.getElementById('next');
-const prevButton = document.getElementById('prev');
-let currentIndex = 0;
-
-function showCard(index) {
-    cards.forEach((card, i) => {
-        card.classList.remove('active');
-        if (i === index) {
-            card.classList.add('active');
-        }
-    });
-}
-
-nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % cards.length;
-    showCard(currentIndex);
-});
-
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    showCard(currentIndex);
-});
 
 
 function toggleFAQ(element) {

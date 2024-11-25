@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         opacity: 0, // Start with invisible elements
         y: 200, // Move the elements 50px upwards
-        duration: 1.5, // Duration of the slide-in
+        duration: 1, // Duration of the slide-in
         stagger: 0.5, // Stagger the animations for each element
     });
     gsap.from(containers, {
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         opacity: 0, // Start with invisible elements
         y: 200, // Move the elements 50px upwards
-        duration: 1.5, // Duration of the slide-in
+        duration: 1, // Duration of the slide-in
         stagger: 0.5, // Stagger the animations for each element
     });
 

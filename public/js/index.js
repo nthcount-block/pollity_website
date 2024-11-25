@@ -1,5 +1,52 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
+  function isMobile() {
+    return window.innerWidth < 768; // Adjust based on mobile breakpoint
+  }
+
+  const whyDivs = document.querySelectorAll(".whydiv");
+  const whyHeader = document.querySelector(".whyh1");
+
+  let headerTriggerPosition = whyHeader.getBoundingClientRect().top + window.scrollY;
+
+  const adjustCards = () => {
+    if (isMobile()) {
+      // Reset styles on mobile
+      whyDivs.forEach((div) => {
+        div.style.transform = ""; // Reset transform
+        div.style.opacity = ""; // Reset opacity
+      });
+      return; // Do not run the animation logic on mobile
+    }
+    const scrollPosition = window.scrollY;
+
+    whyDivs.forEach((div, index) => {
+      // Calculate the scroll-triggered offset, starting when the header is in view
+      const offset = scrollPosition - headerTriggerPosition;
+
+      if (offset > index * 200) {
+        // Slide cards up progressively
+        div.style.transform = `translateY(-${index * 600}px)`;
+        div.style.opacity = "1"; // Ensure full visibility
+      } else if (offset > (index - 1) * 200) {
+        // Smooth transition when scrolling forward
+        // const dynamicY = Math.min(offset - (index - 1) * 200, 200);
+        div.style.transform =  `translateY(-${index * 600}px)`;
+        div.style.opacity = "1";
+      } else {
+        // Reset position if scrolled back up
+        const reverseIndex = whyDivs.length - index - 1;
+        div.style.transform =`translateY(${200 + reverseIndex * 100}px)`;
+        div.style.opacity = "0"; // Hide when not in view
+      }
+    });
+  };
+
+  // Attach the scroll event listener
+  window.addEventListener("scroll", adjustCards);
+  adjustCards(); // Initial position adjustment
+
 
   // Create the animation for the words in the h1
   gsap.from(".integritydiv, .integrityh1 span", {
@@ -52,96 +99,32 @@ document.addEventListener("DOMContentLoaded", function () {
     .to(".icon3", { x: -100, y: -100 }, "<") // icon3 moves to icon4's position
     .to(".icon4", { x: 100, y: -100 }, "<"); // icon4 moves to icon1's position
 
-  function isMobile() {
-    return window.innerWidth < 768; // Adjust based on mobile breakpoint
-  }
+ 
+  
 
-  // if (!isMobile()) {
-  //   // Target all `.whydiv` elements
-  //   gsap.utils.toArray('.whydiv').forEach((whydiv, index) => {
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: '.why',
-  //         start: 'top center', // Start animation when `.why` reaches the center
-  //         end: '+=100%', // End point of the animation
-  //         scrub: true, // Allow smooth scroll scrubbing
-  //         markers: true, // Set to true for debugging
-  //       }
-  //     });
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".container", // Element that triggers the animation
+      start: "top 80%", // Trigger when top of container is 80% from the top of viewport
+      // end: "top 30%", // Animation ends when top of container reaches 30%
+      scrub: 1.5, // Smoothly animate as you scroll
+    },
+    defaults: { duration: 1, ease: "power3.out" },
 
-  //     tl
-  //       .to(whydiv, {
-  //         opacity: 1, // Fade in
-  //         y: -0, // Move to its original position
-  //         duration: 1,
-  //         ease: 'power2.out'
-  //       })
-  //       .set(whydiv, { zIndex: 3 - index }) // Adjust the z-index as we scroll
-  //       .to(whydiv, {
-  //         opacity: 0.7, // Reduce opacity slightly for inactive sections
-  //         duration: 1,
-  //         y: -100,
-  //       }, "+=0.5");
-  //   });
-  // }
-  // if (!isMobile()) {
-  //   const sections = document.querySelectorAll(".whydiv"); // Select all sections
+  });
 
-  //   const sec = document.querySelectorAll(".why");
-  //   sections.forEach((section, index) => {
-  //     let moveUpValue;
-  //     let zIndexValue = index + 1;
-  //     let scaleValue
-  //     let opacityValue
-  //     let initialOpacity
-  //     // First div stays in its original position, second and third move up higher
-  //     if (index === 0) {
-  //       moveUpValue = 0; // First div doesn't move
-  //       opacityValue = 0.3;
-  //       scaleValue = 0.8;
-  //       initialOpacity = 1
-  //     } else if (index === 1) {
-  //       moveUpValue = -500; // Second div moves up by 100px
-  //       opacityValue = 0.7;
-  //       scaleValue = 0.9;
-  //       initialOpacity = 1
+  // Animate the image first
+  // timeline.to(".group1img", { opacity: 1, duration: 0.5 });
+ // Scale down the container
+ timeline.to(".container", { scale: 0.95, duration: 1.5 });
 
-  //     } else if (index === 2) {
-  //       moveUpValue = -1000; // Third div moves up by 200px
-  //       opacityValue = 1
-  //       scaleValue = 1;
-  //       initialOpacity = 1
+  // Animate the left section coming from the left
+  timeline.to(".left-section", { x: 0, opacity: 1 }, "<");
 
-  //     }
-
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: section,
-  //         start: "top 90%", // Start when top of section hits 80% of viewport
-  //         end: "top 70%", // End when top of section hits 20% of viewport
-  //         scrub: 1,
-  //         // pin: true, // Smooth scrubbing
-  //         pinSpacing: false,
-  //         markers: false, // Enable for debugging if needed
-  //         // toggleActions: "play none none none", // Play forward and reverse on scroll
-  //       },
-  //     });
-
-  //     // Animation: fade in and move slightly upward
-  //     tl.fromTo(
-  //       section,
-  //       { opacity: 0, y: 100, scale: 1.05, zIndex: zIndexValue }, // Start off-screen (lower)
-  //       { opacity: 1, y: moveUpValue, scale: scaleValue, zIndex: zIndexValue, duration: 5 } // Fade in and move up
-  //     ).to(section, { opacity: opacityValue, duration: 5 }, "+=0.5"); // Fade out slowly after appearing
-  //     // tl.fromTo(section,
-  //     //   { opacity: initialOpacity, y: 0, scale: 1, zIndex: index + 1 },  // Initial state
-  //     //   { opacity: opacityValue, y: moveUpValue, scale: scaleValue, zIndex: index + 1, duration: 2, ease: "power2.out" } // Smooth easing
-  //     // );
-
-  //   });
+  // Animate the right section coming from the right
+  timeline.to(".right-section", { x: 0, opacity: 1}, "<");
    
 
-  // }
 
 });
 
@@ -240,77 +223,3 @@ prevButton.addEventListener('click', () => {
 // }
 
 
-
-
-// const whyDivs = document.querySelectorAll('.whydiv');
-
-// const observer = new IntersectionObserver((entries) => {
-//   entries.forEach((entry) => {
-//     const index = Array.from(whyDivs).indexOf(entry.target);
-
-//     if (entry.isIntersecting) {
-//       // Show the current card
-//       entry.target.classList.add('show');
-//       entry.target.style.transitionDelay = `${index * 2}s`;
-
-//       // Apply specific classes for scaling to previous cards
-//       whyDivs.forEach((div, i) => {
-//         if (i < index) {
-//           div.classList.add('faded');
-//           div.classList.remove('scale-1', 'scale-0-9', 'scale-0-7');
-//           if (i === index - 1) {
-//             div.classList.add('scale-0-9'); // Second-most recent card
-//           } else {
-//             div.classList.add('scale-0-7'); // Older cards
-//           }
-//         } else {
-//           div.classList.remove('faded', 'scale-0-7', 'scale-0-9', 'scale-1');
-//           div.classList.add('scale-1'); // Keep the current card at full size
-//         }
-//       });
-//     }
-//   });
-// }, { threshold: 0.1 }); // Trigger when 50% of the div is visible
-
-// // Observe each whyDiv
-// whyDivs.forEach((div) => observer.observe(div));
-
-
-
-const whyDivs = document.querySelectorAll('.whydiv');
-
-// Define a minimum width for the animations to activate (e.g., 768px)
-const minWidthForAnimation = 768;
-
-if (window.innerWidth >= minWidthForAnimation) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const index = Array.from(whyDivs).indexOf(entry.target);
-
-      if (entry.isIntersecting) {
-        // Show the current card
-        entry.target.classList.add('show');
-        entry.target.style.transitionDelay = `${index * 2}s`;
-
-        // Apply specific classes for scaling to previous cards
-        whyDivs.forEach((div, i) => {
-          if (i < index) {
-            div.classList.add('faded');
-            div.classList.remove('scale-1', 'scale-0-9', 'scale-0-7');
-            if (i === index - 1) {
-              div.classList.add('scale-0-9'); // Second-most recent card
-            } else {
-              div.classList.add('scale-0-7'); // Older cards
-            }
-          } else {
-            div.classList.remove('faded', 'scale-0-7', 'scale-0-9', 'scale-1');
-            div.classList.add('scale-1'); // Keep the current card at full size
-          }
-        });
-      }
-    });
-  }, { threshold: 0.1 }); // Trigger when 10% of the div is visible
-
-  // Observe each whyDiv
-  whyDivs.forEach((div) => observer.observe(div));
-}
