@@ -1,0 +1,312 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Satoshi', sans-serif;
+  ;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: #262626;
+}
+
+h1 {
+  font-family: 'Baskervville', serif
+}
+
+.h1 {
+  font-size: 5rem;
+  font-weight: lighter;
+  margin: 40px auto 20px;
+  text-align: center;
+  color: #004B52;
+  max-width: 50vw;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 90px;
+}
+
+.hamburger-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  gap: 4px;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+.cta-button {
+  background-color: #46B97D;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1rem;
+
+}
+
+.btn {
+  margin-top: 100px;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #228B22;
+}
+
+.cancel-button {
+  display: none;
+  color: black;
+  border: none;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  font-size: 2rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger img {
+  width: 40px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px;
+  transition: 0.4s;
+}
+
+
+.privacy-hero {
+  /* max-width: 70vw; */
+  margin: 50px auto;
+  padding: 50px;
+  height: 30vh;
+  background-color: #91FDC5;
+  position: relative;
+  /* background-color: red; */
+}
+
+.privacy-bg {
+  min-height: 10vh;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  object-fit: contain;
+}
+
+.privacy-body {
+  /* display: flex; */
+  width: 60vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  position: relative;
+  /* justify-content: space-between; */
+}
+
+.pbody-left {
+  background-color: #91FDC5;
+  /* Light gray background for styling */
+  padding: 15px;
+  border-radius: 8px;
+  color: #004B52;
+  height: fit-content;
+  position: sticky;
+  top: 20px; 
+  line-height: 32px;
+  font-weight: bold;
+}
+
+.pbody-left a {
+  text-decoration: none;
+  display: block;
+  margin-top: 4px;
+  color: #004B52;
+  font-family: 'Baskervville', serif;
+  font-size: 1.2rem;
+
+}
+
+.pbody-right {
+  color: #004B52;
+  text-align: justify;
+  
+}
+
+.pbody-right p {
+  line-height: 20px;
+}
+
+.pbody-right img {
+  color: #004B52;
+}
+
+/* footer */
+.footer {
+  background-color: #F5F5F5;
+  height: 25vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 10rem;
+  align-items: center;
+}
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.logo2 {
+  font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    gap: 8px;
+    
+}
+.footer-icon {
+  display: flex;
+  gap: 20px;
+}
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+.footer-link a {
+  text-decoration: none;
+  color: #595959;
+  font-weight: 700;
+}
+.legal {
+  background-color: #F5F5F5;
+  padding: 50px 10rem;
+  
+
+}
+.legal-text {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  margin: auto;
+  border-top: 1px solid black;
+}
+.legal-flex {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .h1 {
+    font-size: 3rem;
+  }
+  .navbar {
+    position: relative;
+    padding: 0px 20px;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 60%;
+    background-color: white;
+    transition: right 0.3s ease-in-out;
+    padding-top: 60px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .nav-links.active {
+    right: 0;
+  }
+  .nav-links li {
+    margin: 20px 0;
+    color: white;
+  }
+
+  #btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  .hamburger-container .cancel-button.active {
+    display: block;
+  }
+
+  .hamburger-container .hamburger.active {
+    display: none;
+  }
+  /* Toggle the menu */
+  .menu.active {
+    display: flex;
+  }
+
+  
+/* footer */
+.footer {
+  flex-direction: column;
+  align-items: start;
+  padding: 50px 30px;
+  gap: 50px;
+}
+
+.privacy-body {
+  display: block;
+  width: 90vw;
+}
+.legal {
+  padding: 10px 0px;
+}
+
+}

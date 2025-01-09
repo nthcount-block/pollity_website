@@ -19,3 +19,10 @@ exports.getAdmin = (req, res, next) => {
     });
 }
 
+exports.getPrivacy = (req, res, next) => {
+    res.render("privacypolicy", {
+        pageTitle: "Privacy Policy",
+        path: "/",
+    });
+}
+

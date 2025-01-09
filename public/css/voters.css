@@ -533,6 +533,25 @@ body, html {
     color: #595959;
     font-weight: 700;
   }
+  .legal {
+    background-color: #F5F5F5;
+    padding: 50px 10rem;
+    
+  
+  }
+  .legal-text {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin: auto;
+    border-top: 1px solid black;
+  }
+  .legal-flex {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 10px;
+  }
 
 @media (max-width: 768px) {
   .h1 {
@@ -758,6 +777,9 @@ body, html {
       align-items: start;
       padding: 50px 30px;
       gap: 50px;
+    }
+    .legal {
+      padding: 10px 0px;
     }
 
   }

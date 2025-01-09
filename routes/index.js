@@ -12,5 +12,8 @@ router.get('/voters', pages.getVoter);
 
 router.get('/admins', pages.getAdmin);
 
+router.get('/privacypolicy', pages.getPrivacy);
+
+
 
 module.exports = router;
