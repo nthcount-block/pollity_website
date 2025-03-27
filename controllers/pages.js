@@ -25,4 +25,10 @@ exports.getPrivacy = (req, res, next) => {
         path: "/",
     });
 }
+exports.getResults = (req, res, next) => {
+    res.render("results", {
+        pageTitle: "Results",
+        path: "/",
+    });
+}
 

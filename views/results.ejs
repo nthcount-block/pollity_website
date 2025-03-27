@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/results.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+     <nav class="navbar">
+        <div class="logo">
+          <a href="/" class="logo">
+            <img src="images/Logoo.svg" alt="Logo" srcset="" />
+          </a>
+        </div>
+        <!-- <div class="hamburger-container">
+          <div class="hamburger" id="hamburger">
+            <img src="images/menu.svg" alt="menu icon" />
+          </div>
+          <p class="cancel-button" id="cancel">X</p>
+        </div> -->
+        <div class="nav-links menu search-container" id="menu">
+            <img src="images/search-normal.svg" alt="" srcset="">
+          <input type="text" name="search" id="" placeholder="Search">
+        </div>
+        <!-- <a href="#" class="cta-button" id="btn">Schedule a consultation</a> -->
+      </nav> 
+
+<h1 class="dash">Dashboard</h1>
+
+<!-- filter -->
+<div class="filter-container">
+    <select>
+        <option>Election type: Presidential</option>
+        <option>Election type: Senate</option>
+    </select>
+    <select>
+        <option>Year: 2023</option>
+    </select>
+    <select>
+        <option>State: All</option>
+    </select>
+    <select>
+        <option>Local Govt: All</option>
+    </select>
+    <select>
+        <option>Party: All</option>
+    </select>
+    <select>
+        <option>Ward: Ekiadolor</option>
+    </select>
+    <select>
+        <option>Ward: Ekiadolor</option>
+    </select>
+    <select>
+        <option>Ward: Ekiadolor</option>
+    </select>
+    <button class="filter-button">
+        &#9776; Add More Filters
+    </button>
+</div>
+
+<h2>2023 Presidential Election</h2>
+<p>In progress</p>
+
+<!-- barchart -->
+ <!-- <div class="barchart-container">
+
+ </div> -->
+ <div class="dashboard">
+    <div class="stats-container">
+        <div class="stat-box">
+            <img src="images/people1.svg" alt="" srcset="" class="stat-img">
+            <div>
+                <p>Registered Voters</p>
+                <h2 id="votersCount">Loading..</h2>
+            </div>
+        </div>
+        <div class="stat-box">
+            <img src="images/box.svg" alt="" srcset="" class="stat-img">
+            <div>
+                <p>Total Polling Unit</p>
+                <h2>100</h2>
+
+            </div>
+        </div>
+        <div class="stat-box">
+            <img src="images/percentage-square.svg" alt="" srcset="" class="stat-img">
+<div>
+    <p>Voter Turnout</p>
+    <h2>72%</h2>
+
+</div>
+        </div>
+    </div>
+<div class="chart">
+    <div class="chart-container">
+        <h3>Live Update</h3>
+        <p>Total Votes </p>
+        <h1 id="voteCount"> <span class="percentage">32%</span></h1>
+        <canvas id="electionChart"></canvas>
+    </div>
+
+    <div class="results" id="results">
+        <!-- <div class="party">
+            <div>
+
+                <span class="dot red"></span> PDP - First place 
+            </div>
+            <div class="num">
+                2,542,745
+            </div>
+        </div>
+        <div class="party">
+            <div>
+
+                <span class="dot blue"></span> PDP - First place 
+            </div>
+            <div class="num">
+                2,542,745
+            </div>
+        </div>
+        <div class="party">
+            <div>
+
+                <span class="dot yellow"></span> PDP - First place 
+            </div>
+            <div class="num">
+                2,542,745
+            </div>
+        </div> -->
+    </div>
+    </div>
+</div>
+
+<div class="mapdoughnut">
+    <div class="">
+        <div class="container">
+            <div class="stats">
+                <div>
+
+                    <h1 >Votes by Region</h1>
+                    <p>Total Votes </p>
+                    <h1 class="voteCount">5 </h1>
+                </div>
+                <div class="">
+                    <p><span class="dot red"></span> PDP: <span id="pdp-votes">2</span></p>
+                    <p><span class="dot blue"></span> APC: <span id="apc-votes">2</span></p>
+                    <p><span class="dot green"></span> LP: <span id="lp-votes">1</span></p>
+                </div>
+            </div>
+           
+
+
+        <div class="map-container">
+            <!-- Include the SVG -->
+            <object id="nigeria-map" data="images/nigeria.svg" type="image/svg+xml"></object>
+        </div>
+        </div>
+    </div>
+
+
+    <!-- doughnut -->
+
+    <div class="chart-container2">
+        <h2>Election progress</h2>
+        <div class="legend2">
+            <span><span class="dot2 gray"></span> Not started <br> <b>1,000,032</b></span>
+            <span><span class="dot2 blue"></span> In progress <br> <b>2,000,032</b></span>
+            <span><span class="dot2 green"></span> Completed <b>00,032</b></span>
+        </div>
+        <canvas id="electionChart2"></canvas>
+    </div>
+</div>
+
+<!-- pie -->
+<div class="chart-container3">
+    <!-- Voter Turnout by Gender -->
+    <div class="chart-box-custom">
+        <div>
+
+            <h3>Voter turnout by gender</h3>
+            <div class="legend-custom">
+                <span><span class="dot-custom green-dark"></span> Male</span>
+                <span><span class="dot-custom green-light"></span> Female</span>
+            </div>
+        </div>
+        <canvas id="genderChart"></canvas>
+    </div>
+
+    <!-- Voter Turnout by Age -->
+    <div class="chart-box-custom">
+        <div>
+
+            <h3>Voter turnout by age</h3>
+            <div class="legend-custom " id="age">
+                <span><span class="dot-custom green-1"></span> 18-30</span>
+                <span><span class="dot-custom green-2"></span> 31-40</span>
+                <span><span class="dot-custom green-3"></span> 41-50</span>
+                <span><span class="dot-custom green-4"></span> 51-60</span>
+                <span><span class="dot-custom green-5"></span> 61-70</span>
+                <span><span class="dot-custom green-6"></span> >70</span>
+            </div>
+        </div>
+        <canvas id="ageChart"></canvas>
+    </div>
+</div>
+
+<!-- table -->
+ <div class="theader">
+
+
+<header class="header">
+    <div class="header__info">
+        <span class="header__item">States <strong class="header__badge">36</strong></span>
+        <span class="header__item">Local Govts <strong class="header__badge">764</strong></span>
+        <span class="header__item">Polling Units <strong class="header__badge">1M</strong></span>
+    </div>
+    <input type="text" id="searchInput" class="header__search" placeholder="Search">
+</header>
+
+<!-- LEADERBOARD SECTION -->
+<section class="leaderboard" id="leaderboard">    
+</section>
+</div>
+<!-- TABLE SECTION -->
+<table id="electionTable" class="table">
+    <thead class="table__head">
+        <tr>
+            <th class="table__header" onclick="sortTable(0)" colspan="2">State</th>
+            <th class="table__header" onclick="sortTable(1)">Status</th>
+            <th class="table__header" onclick="sortTable(2)">Leading Party</th>
+            <th class="table__header" onclick="sortTable(3)">Total Registered Voters</th>
+            <th class="table__header" onclick="sortTable(4)">Votes Cast</th>
+        </tr>
+    </thead>
+    <tbody class="table__body">
+        <tr class="table__row">
+            <td class="table__data" colspan="2">Abia</td>
+            <td class="table__data"><span class="status status--not-started">Not Started</span></td>
+            <td class="table__data partyimg"><img src="images/Avatar.png" alt="pdp logo" srcset=""><span>PDP</span></td>
+            <td class="table__data">2,345,676</td>
+            <td class="table__data">2,345,676 (20%)</td>
+        </tr>
+        <tr class="table__row">
+            <td class="table__data" colspan="2">Adamawa</td>
+            <td class="table__data"><span class="status status--completed">Completed</span></td>
+            <td class="table__data partyimg"><img src="images/Apc.png" alt="pdp logo" srcset=""><span>APC</span></td>
+            <td class="table__data">1,445,678</td>
+            <td class="table__data">1,445,678 (40%)</td>
+        </tr>
+        <tr class="table__row">
+            <td class="table__data" colspan="2">Akwa Ibom</td>
+            <td class="table__data"><span class="status status--completed">Completed</span></td>
+            <td class="table__data partyimg"><img src="images/LP.png" alt="pdp logo" srcset=""><span>LP</span></td>
+            <td class="table__data">2,345,671</td>
+            <td class="table__data">2,345,671 (33%)</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="js/results.js"></script>
+
+</body>
+</html>

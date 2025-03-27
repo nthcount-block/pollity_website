@@ -14,6 +14,8 @@ router.get('/admins', pages.getAdmin);
 
 router.get('/privacypolicy', pages.getPrivacy);
 
+router.get('/results', pages.getResults);
+
 
 
 module.exports = router;
