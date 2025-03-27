@@ -221,9 +221,9 @@
 
 <header class="header">
     <div class="header__info">
-        <span class="header__item">States <strong class="header__badge">36</strong></span>
-        <span class="header__item">Local Govts <strong class="header__badge">764</strong></span>
-        <span class="header__item">Polling Units <strong class="header__badge">1M</strong></span>
+        <span class="header__item">States <strong class="header__badge">1</strong></span>
+        <span class="header__item">Local Govts <strong class="header__badge">20</strong></span>
+        <span class="header__item">Polling Units <strong class="header__badge">5000</strong></span>
     </div>
     <input type="text" id="searchInput" class="header__search" placeholder="Search">
 </header>
@@ -243,15 +243,15 @@
             <th class="table__header" onclick="sortTable(4)">Votes Cast</th>
         </tr>
     </thead>
-    <tbody class="table__body">
+    <tbody class="table__body" id="tableBody">
         <tr class="table__row">
-            <td class="table__data" colspan="2">Abia</td>
-            <td class="table__data"><span class="status status--not-started">Not Started</span></td>
+            <td class="table__data" colspan="2">Lagos</td>
+            <td class="table__data"><span class="status status--completed">Completed</span></td>
             <td class="table__data partyimg"><img src="images/Avatar.png" alt="pdp logo" srcset=""><span>PDP</span></td>
-            <td class="table__data">2,345,676</td>
-            <td class="table__data">2,345,676 (20%)</td>
+            <td class="table__data">28</td>
+            <td class="table__data">5</td>
         </tr>
-        <tr class="table__row">
+        <!-- <tr class="table__row">
             <td class="table__data" colspan="2">Adamawa</td>
             <td class="table__data"><span class="status status--completed">Completed</span></td>
             <td class="table__data partyimg"><img src="images/Apc.png" alt="pdp logo" srcset=""><span>APC</span></td>
@@ -264,7 +264,7 @@
             <td class="table__data partyimg"><img src="images/LP.png" alt="pdp logo" srcset=""><span>LP</span></td>
             <td class="table__data">2,345,671</td>
             <td class="table__data">2,345,671 (33%)</td>
-        </tr>
+        </tr> -->
     </tbody>
 </table>
 

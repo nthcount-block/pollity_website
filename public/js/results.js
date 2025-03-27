@@ -77,11 +77,38 @@ async function fetchElectionData() {
         const parties = data.candidates.map(candidate => candidate.partyName);
         const votes = data.candidates.map(candidate => candidate.votes);
 
+        // const tableBody = document.getElementById("tableBody");
+        // tableBody.innerHTML = "";
         // Define chart colors (for visual appeal)
         const colors = [
             '#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#FFDB33', '#33FFF2', '#A133FF', '#33FFA1'
         ];
+        // data.candidates.forEach(candidate => {
+        //     // Push data for the chart
+        //     // parties.push(candidate.partyName);
+        //     // votes.push(candidate.votes);
 
+        //     // Create a new table row
+        //     const row = document.createElement("tr");
+        //     row.classList.add("table__row");
+
+        //     row.innerHTML = `
+        //         <td class="table__data" colspan="2">${candidate.state}</td>
+        //         <td class="table__data">
+        //             <span class="status ${candidate.status === 'Completed' ? 'status--completed' : 'status--not-started'}">
+        //                 ${candidate.status}
+        //             </span>
+        //         </td>
+        //         <td class="table__data partyimg">
+        //             <img src="${candidate.partyLogo}" alt="${candidate.partyName} logo">
+        //             <span>${candidate.partyName}</span>
+        //         </td>
+        //         <td class="table__data">${candidate.totalVoters}</td>
+        //         <td class="table__data">${candidate.votes.toLocaleString()} (${candidate.votePercentage}%)</td>
+        //     `;
+
+        //     tableBody.appendChild(row);
+        // });
         // Render the Chart.js bar chart
         new Chart(ctx, {
             type: 'bar',
@@ -211,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "NG-ZA": { votes: 870000, party: "PDP" }    // Zamfara
     };
  
-    const colors = { PDP: "red", APC: "blue", LP: "green" };
+    const colors = { PDP: "#FF3B30", APC: "#3498db", LP: "#2ecc71" };
 
     const nigeriaMap = document.getElementById("nigeria-map");
 
