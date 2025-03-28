@@ -42,6 +42,41 @@ async function fetchTotalVotes() {
         voteCountElement.textContent = "Failed to load data";
     }
 }
+//  fetch voter turnout
+async function fetchVoterTurnout() {
+    try {
+        // Fetch total votes
+        const votesResponse = await fetch(`${baseUrl}/total-votes/1`);
+        const votesData = await votesResponse.json();
+        const totalVotes = votesData.totalVotes || 0; // Default to 0 if undefined
+
+        // Fetch total registered voters
+        const registeredResponse = await fetch(`${baseUrl}/total-registered-voters/1`);
+        const registeredData = await registeredResponse.json();
+        const totalRegisteredVoters = registeredData.totalRegisteredVoters || 0; // Default to 0 if undefined
+
+        let voterTurnout = 0; // Default turnout
+
+        // Calculate turnout only if totalRegisteredVoters > 0
+        if (totalRegisteredVoters > 0) {
+            voterTurnout = ((totalVotes / totalRegisteredVoters) * 100).toFixed(2);
+        }
+
+        // Update the UI
+        document.querySelector(".voter-turnout h2").textContent = `${voterTurnout}%`;
+
+    } catch (error) {
+        console.error("Error fetching voter turnout:", error);
+        document.querySelector(".voter-turnout h2").textContent = "Failed to load";
+    }
+}
+
+// Call function
+fetchVoterTurnout();
+
+
+// Call function
+fetchVoterTurnout();
 
 // Call the function when the page loads
 fetchRegisteredVoters();
@@ -175,9 +210,9 @@ async function fetchAndDisplayTopCandidates(url) {
 
         // Select the container where results will be displayed
         const resultsContainer = document.getElementById('results');
-
+        const validCandidates = topThree.filter(candidate => candidate.votes > 0);
         // Generate and insert the HTML
-        resultsContainer.innerHTML = topThree.map((candidate, index) => `
+        resultsContainer.innerHTML = validCandidates.map((candidate, index) => `
             <div class="party">
                 <div>
                     <span class="dot ${colors[index]}"></span> ${candidate.partyName} - 
@@ -391,7 +426,7 @@ async function fetchLeaderboardData() {
                     <h2 class="leaderboard__score">${candidate.votes}</h2>
                     </div>
                     <div class="leaderboard__change-container">
-                     ${index === 0 ? `<span class="leaderboard__position">1st</span>` : "-"}
+                     ${index === 0 ? `<span class="leaderboard__position"></span>` : "-"}
                      <span class="leaderboard__change ${changeClass}">${changeSymbol}${percentageChange}%</span>
                     </div>
                 `;
