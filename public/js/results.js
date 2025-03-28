@@ -1,6 +1,6 @@
 const baseUrl = 'https://app.pollity.io'
 const votersCountElement = document.getElementById("votersCount");
-const voteCountElement = document.getElementById("voteCount")
+const voteCountElement = document.querySelectorAll(".voteCount")
 
 // Function to fetch registered voters
 async function fetchRegisteredVoters() {
@@ -25,10 +25,17 @@ async function fetchTotalVotes() {
         const data = await response.json();
         
         // Assuming the API response has { total: 12134567 }
-        if (data.totalVotes) {
-            voteCountElement.textContent = data.totalVotes?.toLocaleString(); // Format number with commas
+        if (typeof data.totalVotes === "number") {
+            const formattedVotes = data.totalVotes.toLocaleString(); // Format with commas
+            
+            // Update all elements with the class "voteCount"
+            voteCountElement.forEach(element => {
+                element.textContent = formattedVotes;
+            });
         } else {
-            voteCountElement.textContent = "Data not available";
+            voteCountElement.forEach(element => {
+                element.textContent = "Data not available";
+            });
         }
     } catch (error) {
         console.error("Error fetching registered voters:", error);
@@ -39,31 +46,6 @@ async function fetchTotalVotes() {
 // Call the function when the page loads
 fetchRegisteredVoters();
 fetchTotalVotes()
-
-
-// bar-chart
-// const ctx = document.getElementById('electionChart').getContext('2d');
-// // chart
-// new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ['PDP', 'APC', 'LP', 'APGA', 'AC', 'AD', 'FCB'],
-//         datasets: [{
-//             label: 'Votes',
-//             data: [20000000, 10000000, 5000000, 1000000, 500000, 400000, 200000],
-//             backgroundColor: ['white'],
-//             borderRadius: 10
-//         }]
-//     },
-//     options: {
-//         responsive: true,
-//         scales: {
-//             y: {
-//                 beginAtZero: true
-//             }
-//         }
-//     }
-// });
 
 const ctx = document.getElementById('electionChart').getContext('2d');
 
@@ -77,12 +59,30 @@ async function fetchElectionData() {
         const parties = data.candidates.map(candidate => candidate.partyName);
         const votes = data.candidates.map(candidate => candidate.votes);
 
-        // const tableBody = document.getElementById("tableBody");
-        // tableBody.innerHTML = "";
-        // Define chart colors (for visual appeal)
         const colors = [
             '#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#FFDB33', '#33FFF2', '#A133FF', '#33FFA1'
         ];
+
+
+        // Select the container where vote elements should be rendered
+        const voteContainer = document.querySelector(".vote-container");
+        voteContainer.innerHTML = ""; // Clear previous content
+
+        // Extract party names and votes
+        data.candidates.forEach((candidate, index )=> {
+            const partyName = candidate.partyName;
+            const votes = candidate.votes;
+            const color = colors[index % colors.length] // Default to gray if not found
+
+            // Create party element
+            const partyElement = document.createElement("p");
+            partyElement.innerHTML = `
+                <span class="dot" style="background-color: ${color};"></span> 
+                ${partyName}: <span>${votes.toLocaleString()}</span>
+            `;
+            voteContainer.appendChild(partyElement);
+        });
+
         // data.candidates.forEach(candidate => {
         //     // Push data for the chart
         //     // parties.push(candidate.partyName);
